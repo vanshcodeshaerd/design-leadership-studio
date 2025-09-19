@@ -381,6 +381,17 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: gradient-shift 4s ease-in-out infinite;
+    /* Fallback for browsers that don't support background-clip */
+    color: hsl(280, 70%, 65%);
+  }
+
+  /* Ensure gradient text works across browsers */
+  @supports (-webkit-background-clip: text) {
+    .text-neofolks-gradient {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
   }
 
   .bg-gradient-primary {

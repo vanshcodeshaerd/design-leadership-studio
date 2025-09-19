@@ -57,7 +57,7 @@ const Index = () => {
           <div className="reveal-fade">
             {/* Main Neofolks Title */}
             <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold mb-8 leading-tight tracking-tight">
-              <span className="text-neofolks-gradient drop-shadow-2xl">
+              <span className="text-neofolks-gradient drop-shadow-2xl font-extrabold">
                 NeoFolks
               </span>
             </h1>
