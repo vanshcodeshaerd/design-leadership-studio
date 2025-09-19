@@ -54,10 +54,24 @@ const Index = () => {
 
         {/* Main Content */}
         <div className="container-padding relative z-10 text-center max-w-6xl mx-auto">
-          <div className="reveal-fade">
+          <div className="reveal-fade opacity-100">
             {/* Main Neofolks Title */}
             <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold mb-8 leading-tight tracking-tight">
-              <span className="text-neofolks-gradient drop-shadow-2xl font-extrabold">
+              {/* Fallback visible text */}
+              <span className="text-white drop-shadow-2xl font-extrabold block mb-4">
+                NeoFolks
+              </span>
+              {/* Gradient text overlay */}
+              <span 
+                className="text-neofolks-gradient drop-shadow-2xl font-extrabold absolute inset-0"
+                style={{
+                  background: 'linear-gradient(90deg, #B794F6, #F687B3, #FBB6CE, #FED7AA)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  display: 'inline-block'
+                }}
+              >
                 NeoFolks
               </span>
             </h1>
