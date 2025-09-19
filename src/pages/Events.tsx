@@ -393,8 +393,14 @@ const Events = () => {
               <Button variant="hero" size="lg">
                 Join Neofolks Community
               </Button>
-              <Button variant="leadership" size="lg">
-                Follow Our Updates
+              <Button variant="leadership" size="lg" asChild>
+                <a 
+                  href="https://www.instagram.com/neofolks/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Follow Our Updates
+                </a>
               </Button>
             </div>
           </div>
