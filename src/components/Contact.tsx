@@ -82,11 +82,11 @@ const Contact = () => {
       <div className="container mx-auto container-padding">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gradient-primary">
-            Let's Build Something Amazing
+            Connect with Neofolks
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to discuss your next project, explore collaboration opportunities, 
-            or just have a conversation about technology leadership? I'd love to hear from you.
+            Join our vibrant tech community at Navrachana University! Whether you're interested in 
+            technology workshops, community events, or collaborative learning opportunities, we'd love to hear from you.
           </p>
         </div>
 
@@ -96,8 +96,9 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Whether you're looking for technical leadership, want to collaborate on innovative projects, 
-                or discuss opportunities in technology management, I'm always open to meaningful conversations.
+                Whether you're a current NUV student interested in joining our tech community, 
+                an industry professional looking to collaborate, or someone who shares our passion 
+                for technology and innovation - we're always excited to connect with like-minded individuals.
               </p>
             </div>
 
@@ -110,10 +111,10 @@ const Contact = () => {
                 <div>
                   <h4 className="font-medium">Email</h4>
                   <a 
-                    href="mailto:hello@techleader.com" 
+                    href="mailto:neofolks@nuvstudents.edu" 
                     className="text-muted-foreground hover:text-accent transition-colors"
                   >
-                    hello@techleader.com
+                    neofolks@nuvstudents.edu
                   </a>
                 </div>
               </div>
@@ -125,12 +126,12 @@ const Contact = () => {
                 <div>
                   <h4 className="font-medium">LinkedIn</h4>
                   <a 
-                    href="https://linkedin.com/in/techleader" 
+                    href="https://linkedin.com/company/neofolks-nuv" 
                     className="text-muted-foreground hover:text-accent transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    linkedin.com/in/techleader
+                    NeoFolks - Tech Community
                   </a>
                 </div>
               </div>
@@ -142,12 +143,12 @@ const Contact = () => {
                 <div>
                   <h4 className="font-medium">GitHub</h4>
                   <a 
-                    href="https://github.com/techleader" 
+                    href="https://github.com/neofolks-nuv" 
                     className="text-muted-foreground hover:text-accent transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    github.com/techleader
+                    github.com/neofolks-nuv
                   </a>
                 </div>
               </div>
@@ -158,7 +159,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-medium">Location</h4>
-                  <span className="text-muted-foreground">San Francisco, CA</span>
+                  <span className="text-muted-foreground">Navrachana University, Vadodara</span>
                 </div>
               </div>
             </div>
@@ -170,8 +171,8 @@ const Contact = () => {
                 Quick Response
               </h4>
               <p className="text-muted-foreground text-sm">
-                I typically respond to messages within 24 hours. For urgent matters, 
-                feel free to connect with me on LinkedIn for faster communication.
+                We typically respond to messages within 48 hours. For urgent matters 
+                or event inquiries, feel free to reach out via our LinkedIn page for faster communication.
               </p>
             </div>
           </div>
@@ -227,13 +228,13 @@ const Contact = () => {
 
               {/* Message Field */}
               <div className="space-y-2">
-                <Label htmlFor="message">Message *</Label>
+                  <Label htmlFor="message">Message *</Label>
                 <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  placeholder="Tell me about your project, opportunity, or what you'd like to discuss..."
+                  placeholder="Tell us about your interest in joining Neofolks, collaboration ideas, or any questions about our community..."
                   required
                   rows={6}
                   className="bg-background/50 resize-none"

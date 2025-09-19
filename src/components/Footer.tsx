@@ -18,11 +18,12 @@ const Footer = () => {
           {/* Brand & Description */}
           <div className="md:col-span-2">
             <h3 className="text-xl font-semibold mb-4 text-gradient-primary">
-              Tech Leadership Portfolio
+              Neofolks - Tech Community NUV
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
-              Passionate about building innovative solutions, growing exceptional teams, 
-              and driving technical excellence that creates meaningful impact.
+              Neofolks is the premier technology and community group at Navrachana University, 
+              dedicated to fostering innovation, creativity, and collaboration among students 
+              passionate about technology and digital transformation.
             </p>
             
             {/* Social Links */}
@@ -44,48 +45,48 @@ const Footer = () => {
 
           {/* Quick Navigation */}
           <div>
-            <h4 className="font-semibold mb-4">Navigation</h4>
+            <h4 className="font-semibold mb-4">Quick Links</h4>
             <nav className="space-y-2">
               <button 
                 onClick={() => scrollToSection('about')}
                 className="block text-muted-foreground hover:text-accent transition-colors animated-underline"
               >
-                About
+                About Neofolks
               </button>
               <button 
                 onClick={() => scrollToSection('team')}
                 className="block text-muted-foreground hover:text-accent transition-colors animated-underline"
               >
-                Leadership Team
+                Our Team
               </button>
               <button 
                 onClick={() => scrollToSection('projects')}
                 className="block text-muted-foreground hover:text-accent transition-colors animated-underline"
               >
-                Featured Projects
+                Community Projects
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="block text-muted-foreground hover:text-accent transition-colors animated-underline"
               >
-                Contact
+                Connect With Us
               </button>
             </nav>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-4">Get In Touch</h4>
+            <h4 className="font-semibold mb-4">Connect With Us</h4>
             <div className="space-y-2 text-muted-foreground">
-              <p>San Francisco, CA</p>
+              <p>Navrachana University, Vadodara</p>
               <a 
-                href="mailto:hello@techleader.com"
+                href="mailto:neofolks@nuvstudents.edu"
                 className="block hover:text-accent transition-colors animated-underline"
               >
-                hello@techleader.com
+                neofolks@nuvstudents.edu
               </a>
               <p className="text-sm">
-                Response time: 24 hours
+                Community response time: 48 hours
               </p>
             </div>
           </div>
@@ -94,7 +95,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="text-sm text-muted-foreground">
-            © 2024 Tech Leadership Portfolio. Built with passion for innovation.
+            © 2024 Neofolks - Tech Community at Navrachana University. Built with passion for innovation and learning.
           </div>
           
           <div className="flex items-center gap-4">
@@ -126,9 +127,9 @@ const Footer = () => {
         {/* Performance & Accessibility Statement */}
         <div className="text-center py-4 border-t border-border/50">
           <p className="text-xs text-muted-foreground">
-            This portfolio is optimized for performance and accessibility • 
-            Built with React, TypeScript, and modern web standards • 
-            Lighthouse Score: 95+ across all metrics
+            Official website of Neofolks Tech Community at Navrachana University • 
+            Built with modern web technologies and accessibility standards • 
+            Empowering students through technology education and innovation
           </p>
         </div>
       </div>

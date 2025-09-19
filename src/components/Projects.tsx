@@ -120,11 +120,11 @@ const Projects = () => {
       <div className="container mx-auto container-padding">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gradient-primary">
-            Featured Projects
+            Community Projects & Initiatives
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of technical leadership through innovative solutions, team collaboration, 
-            and measurable business impact across diverse technology domains.
+            Discover the innovative projects and initiatives that showcase Neofolks' commitment to 
+            technology education, community building, and practical learning experiences at NUV.
           </p>
         </div>
 

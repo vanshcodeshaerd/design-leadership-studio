@@ -122,11 +122,11 @@ const Team = () => {
       <div className="container mx-auto container-padding">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gradient-primary">
-            Leadership Team
+            Our Leadership Team
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Meet the passionate leaders driving innovation and fostering community growth through 
-            collaborative excellence and strategic vision.
+            Meet the passionate leaders driving innovation and fostering community growth at Neofolks. 
+            Our team is committed to creating an inclusive environment where technology meets creativity.
           </p>
         </div>
 
