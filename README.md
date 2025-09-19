@@ -33,6 +33,46 @@ This portfolio demonstrates technical leadership through:
 
 ## 📦 Getting Started
 
+## HomePage
+
+<img width="2472" height="1434" alt="image" src="https://github.com/user-attachments/assets/f9e6c37b-c4fa-4e1b-ab1e-8dd2faff547d" />
+<img width="2473" height="1419" alt="image" src="https://github.com/user-attachments/assets/500f87fd-5e92-445e-91ba-a446e9052460" />
+
+## About Us Page
+
+<img width="2472" height="1402" alt="image" src="https://github.com/user-attachments/assets/1961da33-cce0-4c69-8bcc-aa3a0704da1c" />
+
+<img width="2453" height="963" alt="image" src="https://github.com/user-attachments/assets/c1d398e8-5a39-49f9-9632-5f3dc10b10c7" />
+
+<img width="2472" height="1402" alt="image" src="https://github.com/user-attachments/assets/706fe304-9c3d-4723-acad-7edae9a242c5" />
+
+<img width="2449" height="1418" alt="image" src="https://github.com/user-attachments/assets/19da0ec6-b7ef-4cd4-8af4-54aebaca6544" />
+
+## Team 
+
+<img width="1573" height="1228" alt="image" src="https://github.com/user-attachments/assets/5cc26c3c-9916-4c19-bf1a-f846208dcade" />
+
+# Events 
+
+
+<img width="1448" height="1375" alt="image" src="https://github.com/user-attachments/assets/2a08e250-2b30-4d9e-b186-9dbc6e525722" />
+
+<img width="1332" height="1426" alt="image" src="https://github.com/user-attachments/assets/f61acf16-b92f-42fb-a22b-f0c373b9f17f" />
+
+
+## Contact Us Page
+
+<img width="1116" height="1021" alt="image" src="https://github.com/user-attachments/assets/54f896e7-0fca-4aaa-b34b-9ad646ee7460" />
+
+## Join US PAge
+
+<img width="777" height="1373" alt="image" src="https://github.com/user-attachments/assets/a1d77f3e-91ab-4f7c-8522-642a21fe048e" />
+
+
+
+
+
+
 ### Prerequisites
 - Node.js 18+ and npm
 - Modern web browser
