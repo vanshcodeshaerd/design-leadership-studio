@@ -3,7 +3,7 @@ import { ArrowRight, Users, Code, Calendar, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -144,4 +144,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Home;
