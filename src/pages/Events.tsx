@@ -3,6 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Footer from "@/components/Footer";
 
+// Import event images
+import pythonWorkshopImg from "@/assets/events/python-workshop.jpg";
+import startupTalkImg from "@/assets/events/startup-talk.jpg";
+import hackathonSceneImg from "@/assets/events/hackathon-scene.jpg";
+import webDevWorkshopImg from "@/assets/events/web-dev-workshop.jpg";
+
 interface Event {
   id: string;
   title: string;
@@ -15,6 +21,7 @@ interface Event {
   attendees?: number;
   maxAttendees?: number;
   tags: string[];
+  image?: string;
 }
 
 const Events = () => {
@@ -64,7 +71,7 @@ const Events = () => {
     {
       id: "python-basics",
       title: "Python Programming Basics",
-      description: "Introduction to Python programming covering syntax, data structures, and basic algorithms.",
+      description: "Introduction to Python programming covering syntax, data structures, and basic algorithms. Students learned fundamental concepts through hands-on coding exercises.",
       date: "2024-01-20",
       time: "2:00 PM - 4:00 PM",
       location: "Computer Lab 2, NUV",
@@ -72,12 +79,13 @@ const Events = () => {
       status: "Past",
       attendees: 35,
       maxAttendees: 35,
-      tags: ["Python", "Programming", "Beginner"]
+      tags: ["Python", "Programming", "Beginner"],
+      image: pythonWorkshopImg
     },
     {
       id: "tech-talk-startup",
       title: "Building Tech Startups",
-      description: "Alumni talk on entrepreneurship journey and building successful tech startups from college.",
+      description: "Inspiring alumni talk on entrepreneurship journey and building successful tech startups from college. Shared real experiences and practical advice.",
       date: "2024-01-15",
       time: "4:00 PM - 5:30 PM",
       location: "Seminar Hall, NUV",
@@ -85,7 +93,36 @@ const Events = () => {
       status: "Past",
       attendees: 80,
       maxAttendees: 80,
-      tags: ["Entrepreneurship", "Startup", "Alumni Talk"]
+      tags: ["Entrepreneurship", "Startup", "Alumni Talk"],
+      image: startupTalkImg
+    },
+    {
+      id: "web-dev-bootcamp",
+      title: "Web Development Bootcamp",
+      description: "Intensive 3-day bootcamp covering HTML, CSS, JavaScript, and React fundamentals. Students built their first responsive websites.",
+      date: "2023-12-10",
+      time: "10:00 AM - 4:00 PM",
+      location: "Innovation Center, NUV",
+      type: "Workshop",
+      status: "Past",
+      attendees: 45,
+      maxAttendees: 50,
+      tags: ["Web Development", "React", "JavaScript", "Intensive"],
+      image: webDevWorkshopImg
+    },
+    {
+      id: "winter-hackathon",
+      title: "Winter Code Hackathon",
+      description: "24-hour coding marathon where students developed innovative solutions for campus problems. Great learning experience with mentorship.",
+      date: "2023-12-01",
+      time: "6:00 PM - 6:00 PM (+1 day)",
+      location: "Computer Labs, NUV",
+      type: "Hackathon",
+      status: "Past",
+      attendees: 60,
+      maxAttendees: 80,
+      tags: ["Hackathon", "Innovation", "24-hour", "Competition"],
+      image: hackathonSceneImg
     }
   ];
 
@@ -255,41 +292,88 @@ const Events = () => {
         </div>
       </section>
 
-      {/* Past Events */}
+      {/* Past Events Gallery */}
       <section className="section-padding">
         <div className="container mx-auto container-padding">
-          <h2 className="text-3xl font-bold mb-8">Past Events</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <h2 className="text-3xl font-bold mb-8 text-gradient-primary text-center">Our Past Events</h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Take a look at some of our recent successful events that brought together our tech community 
+            for learning, innovation, and collaboration.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {pastEvents.map((event) => {
               const IconComponent = getEventIcon(event.type);
               return (
-                <div key={event.id} className="glass-card rounded-xl p-6 opacity-80">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-muted">
-                      <IconComponent className="h-5 w-5 text-muted-foreground" />
+                <div key={event.id} className="glass-card glass-card-hover rounded-xl overflow-hidden group">
+                  {/* Event Image */}
+                  <div className="aspect-video relative overflow-hidden">
+                    <img 
+                      src={event.image} 
+                      alt={event.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-4 left-4">
+                      <Badge className="bg-black/70 text-white border-white/20">
+                        {formatDate(event.date)}
+                      </Badge>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-semibold">{event.title}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {formatDate(event.date)} • {event.attendees} attended
-                      </p>
+                    <div className="absolute top-4 right-4">
+                      <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-black/70 backdrop-blur-sm">
+                        <IconComponent className="h-5 w-5 text-white" />
+                      </div>
                     </div>
                   </div>
-                  
-                  <p className="text-muted-foreground text-sm mb-3">
-                    {event.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {event.tags.map((tag, index) => (
-                      <Badge key={index} variant="outline" className="text-xs opacity-70">
-                        {tag}
+
+                  {/* Event Content */}
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-xl font-semibold group-hover:text-accent transition-colors">
+                        {event.title}
+                      </h3>
+                      <Badge variant="outline" className="text-xs">
+                        {event.type}
                       </Badge>
-                    ))}
+                    </div>
+
+                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                      {event.description}
+                    </p>
+
+                    <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                      <div className="flex items-center gap-1">
+                        <Clock className="h-3 w-3" />
+                        <span>{event.time}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <MapPin className="h-3 w-3" />
+                        <span>{event.location}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Users className="h-3 w-3" />
+                        <span>{event.attendees} attended</span>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-1">
+                      {event.tags.map((tag, index) => (
+                        <Badge key={index} variant="outline" className="text-xs opacity-80">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
                 </div>
               );
             })}
+          </div>
+
+          {/* View More Button */}
+          <div className="text-center mt-12">
+            <Button variant="leadership" size="lg">
+              View All Past Events
+            </Button>
           </div>
         </div>
       </section>
