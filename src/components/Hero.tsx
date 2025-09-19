@@ -1,5 +1,6 @@
 import { ArrowRight, Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -32,34 +33,44 @@ const Hero = () => {
             <Button 
               variant="hero" 
               size="xl" 
-              onClick={() => scrollToSection('about')}
+              asChild
               className="group"
             >
-              Learn About Us 
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <Link to="/about">
+                Learn About Us 
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
             </Button>
             <Button 
               variant="glass" 
               size="xl" 
-              onClick={() => scrollToSection('team')}
+              asChild
             >
-              Meet Our Team
+              <Link to="/team">
+                Meet Our Team
+              </Link>
             </Button>
           </div>
 
           {/* Social Links */}
           <div className="flex justify-center gap-6">
-            <Button variant="ghost" size="icon" className="hover:text-accent-light">
-              <Linkedin className="h-5 w-5" />
-              <span className="sr-only">LinkedIn - NeoFolks Community</span>
+            <Button variant="ghost" size="icon" className="hover:text-accent-light" asChild>
+              <a href="https://www.linkedin.com/company/neofolks" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-5 w-5" />
+                <span className="sr-only">LinkedIn - NeoFolks Community</span>
+              </a>
             </Button>
-            <Button variant="ghost" size="icon" className="hover:text-accent-light">
-              <Mail className="h-5 w-5" />
-              <span className="sr-only">Email Neofolks</span>
+            <Button variant="ghost" size="icon" className="hover:text-accent-light" asChild>
+              <a href="mailto:neofolks@nuvstudents.edu">
+                <Mail className="h-5 w-5" />
+                <span className="sr-only">Email Neofolks</span>
+              </a>
             </Button>
-            <Button variant="ghost" size="icon" className="hover:text-accent-light">
-              <Github className="h-5 w-5" />
-              <span className="sr-only">GitHub Projects</span>
+            <Button variant="ghost" size="icon" className="hover:text-accent-light" asChild>
+              <a href="https://github.com/neofolks" target="_blank" rel="noopener noreferrer">
+                <Github className="h-5 w-5" />
+                <span className="sr-only">GitHub Projects</span>
+              </a>
             </Button>
           </div>
         </div>

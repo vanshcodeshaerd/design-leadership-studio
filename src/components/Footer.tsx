@@ -28,17 +28,23 @@ const Footer = () => {
             
             {/* Social Links */}
             <div className="flex gap-4">
-              <Button variant="ghost" size="icon" className="hover:text-accent-light">
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
+              <Button variant="ghost" size="icon" className="hover:text-accent-light" asChild>
+                <a href="https://github.com/neofolks" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-5 w-5" />
+                  <span className="sr-only">GitHub</span>
+                </a>
               </Button>
-              <Button variant="ghost" size="icon" className="hover:text-accent-light">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
+              <Button variant="ghost" size="icon" className="hover:text-accent-light" asChild>
+                <a href="https://www.linkedin.com/company/neofolks" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5" />
+                  <span className="sr-only">LinkedIn</span>
+                </a>
               </Button>
-              <Button variant="ghost" size="icon" className="hover:text-accent-light">
-                <Mail className="h-5 w-5" />
-                <span className="sr-only">Email</span>
+              <Button variant="ghost" size="icon" className="hover:text-accent-light" asChild>
+                <a href="mailto:neofolks@nuvstudents.edu">
+                  <Mail className="h-5 w-5" />
+                  <span className="sr-only">Email</span>
+                </a>
               </Button>
             </div>
           </div>

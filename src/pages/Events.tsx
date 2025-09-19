@@ -228,13 +228,17 @@ const Events = () => {
                   </div>
 
                   {event.status === "Registration Open" && (
-                    <Button variant="hero" className="w-full">
-                      Register Now
+                    <Button variant="hero" className="w-full" asChild>
+                      <a href="/join">
+                        Register Now
+                      </a>
                     </Button>
                   )}
                   {event.status === "Upcoming" && (
-                    <Button variant="leadership" className="w-full">
-                      Learn More
+                    <Button variant="leadership" className="w-full" asChild>
+                      <a href="/contact">
+                        Learn More
+                      </a>
                     </Button>
                   )}
                 </div>
@@ -371,8 +375,10 @@ const Events = () => {
 
           {/* View More Button */}
           <div className="text-center mt-12">
-            <Button variant="leadership" size="lg">
-              View All Past Events
+            <Button variant="leadership" size="lg" asChild>
+              <a href="https://www.instagram.com/neofolks/" target="_blank" rel="noopener noreferrer">
+                View All Past Events
+              </a>
             </Button>
           </div>
         </div>
@@ -390,8 +396,10 @@ const Events = () => {
               Join our community to get notified about upcoming workshops and seminars.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg">
-                Join Neofolks Community
+              <Button variant="hero" size="lg" asChild>
+                <a href="/join">
+                  Join Neofolks Community
+                </a>
               </Button>
               <Button variant="leadership" size="lg" asChild>
                 <a 

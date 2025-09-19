@@ -191,15 +191,19 @@ const Projects = () => {
                 {/* Quick Actions */}
                 <div className="flex gap-2">
                   {project.liveUrl && (
-                    <Button variant="ghost" size="sm" onClick={(e) => e.stopPropagation()}>
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Live
+                    <Button variant="ghost" size="sm" onClick={(e) => e.stopPropagation()} asChild>
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Live
+                      </a>
                     </Button>
                   )}
                   {project.githubUrl && (
-                    <Button variant="ghost" size="sm" onClick={(e) => e.stopPropagation()}>
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
+                    <Button variant="ghost" size="sm" onClick={(e) => e.stopPropagation()} asChild>
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4 mr-2" />
+                        Code
+                      </a>
                     </Button>
                   )}
                 </div>
@@ -273,21 +277,27 @@ const Projects = () => {
                   {/* Action Buttons */}
                   <div className="flex flex-wrap gap-4">
                     {selectedProject.liveUrl && (
-                      <Button variant="hero" size="lg">
-                        <ExternalLink className="h-5 w-5 mr-2" />
-                        View Live Project
+                      <Button variant="hero" size="lg" asChild>
+                        <a href={selectedProject.liveUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-5 w-5 mr-2" />
+                          View Live Project
+                        </a>
                       </Button>
                     )}
                     {selectedProject.githubUrl && (
-                      <Button variant="glass" size="lg">
-                        <Github className="h-5 w-5 mr-2" />
-                        View Code
+                      <Button variant="glass" size="lg" asChild>
+                        <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-5 w-5 mr-2" />
+                          View Code
+                        </a>
                       </Button>
                     )}
                     {selectedProject.demoUrl && (
-                      <Button variant="leadership" size="lg">
-                        <Play className="h-5 w-5 mr-2" />
-                        View Demo
+                      <Button variant="leadership" size="lg" asChild>
+                        <a href={selectedProject.demoUrl} target="_blank" rel="noopener noreferrer">
+                          <Play className="h-5 w-5 mr-2" />
+                          View Demo
+                        </a>
                       </Button>
                     )}
                   </div>
