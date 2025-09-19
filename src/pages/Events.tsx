@@ -4,10 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import Footer from "@/components/Footer";
 
 // Import event images
-import pythonWorkshopImg from "@/assets/events/python-workshop.jpg";
-import startupTalkImg from "@/assets/events/startup-talk.jpg";
-import hackathonSceneImg from "@/assets/events/hackathon-scene.jpg";
-import webDevWorkshopImg from "@/assets/events/web-dev-workshop.jpg";
+import event1Img from "@/assets/events/event-1.jpg";
+import event2Img from "@/assets/events/event-2.jpg";
+import event3Img from "@/assets/events/event-3.jpg";
+import event4Img from "@/assets/events/event-4.jpg";
 
 interface Event {
   id: string;
@@ -80,7 +80,7 @@ const Events = () => {
       attendees: 35,
       maxAttendees: 35,
       tags: ["Python", "Programming", "Beginner"],
-      image: pythonWorkshopImg
+      image: event1Img
     },
     {
       id: "tech-talk-startup",
@@ -94,7 +94,7 @@ const Events = () => {
       attendees: 80,
       maxAttendees: 80,
       tags: ["Entrepreneurship", "Startup", "Alumni Talk"],
-      image: startupTalkImg
+      image: event2Img
     },
     {
       id: "web-dev-bootcamp",
@@ -108,7 +108,7 @@ const Events = () => {
       attendees: 45,
       maxAttendees: 50,
       tags: ["Web Development", "React", "JavaScript", "Intensive"],
-      image: webDevWorkshopImg
+      image: event3Img
     },
     {
       id: "winter-hackathon",
@@ -122,7 +122,7 @@ const Events = () => {
       attendees: 60,
       maxAttendees: 80,
       tags: ["Hackathon", "Innovation", "24-hour", "Competition"],
-      image: hackathonSceneImg
+      image: event4Img
     }
   ];
 

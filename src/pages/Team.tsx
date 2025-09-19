@@ -26,87 +26,87 @@ const Team = () => {
 
   const teamMembers: TeamMember[] = [
     {
-      id: "suhani-singh",
-      name: "Suhani Singh",
+      id: "travon-bhagat",
+      name: "Travon Bhagat",
       role: "Community Lead",
       shortBio: "Leading community engagement and building connections at Neofolks",
-      fullBio: "Suhani Singh is the Community Lead at Neofolks, overseeing community engagement, member relations, and fostering a welcoming environment for all tech enthusiasts. With a passion for bringing people together and creating inclusive spaces, she organizes networking events and mentorship programs.",
+      fullBio: "Travon Bhagat is the Community Lead at Neofolks, overseeing community engagement, member relations, and fostering a welcoming environment for all tech enthusiasts. With a passion for bringing people together and creating inclusive spaces, he organizes networking events and mentorship programs.",
       responsibilities: ["Community Strategy", "Member Onboarding", "Event Planning", "Mentorship Programs"],
       achievements: ["Built active community at NUV", "Organized 10+ tech events", "Launched mentorship initiative"],
       skills: ["Community Management", "Event Planning", "Public Speaking", "Relationship Building"],
       icon: Users,
       contact: {
-        linkedin: "linkedin.com/in/suhani-singh-neofolks"
+        linkedin: "linkedin.com/in/travon-bhagat-neofolks"
       }
     },
     {
-      id: "tech-lead",
-      name: "Technical Lead",
-      role: "Technical Excellence",
+      id: "rishabh-gajiwala",
+      name: "Rishabh Gajiwala",
+      role: "Community Co-lead",
+      shortBio: "Supporting community initiatives and member engagement",
+      fullBio: "Rishabh Gajiwala serves as Community Co-lead at Neofolks, working closely with the Community Lead to support member engagement and community building initiatives. He brings fresh perspectives and innovative ideas to community programs.",
+      responsibilities: ["Community Support", "Member Relations", "Program Coordination", "Event Assistance"],
+      achievements: ["Enhanced member onboarding", "Improved community feedback systems", "Coordinated social events"],
+      skills: ["Team Collaboration", "Communication", "Program Management", "Member Relations"],
+      icon: Users,
+      contact: {
+        linkedin: "linkedin.com/in/rishabh-gajiwala-neofolks"
+      }
+    },
+    {
+      id: "yatharth-singh-panwar",
+      name: "Yatharth Singh Panwar",
+      role: "Tech Lead",
       shortBio: "Driving technical innovation and leading development workshops",
-      fullBio: "Our Technical Lead guides members in learning new technologies and maintains the club's technical standards. They organize coding workshops, hackathons, and technical competitions while ensuring knowledge sharing across the community.",
+      fullBio: "Yatharth Singh Panwar guides members in learning new technologies and maintains the club's technical standards. He organizes coding workshops, hackathons, and technical competitions while ensuring knowledge sharing across the community.",
       responsibilities: ["Technical Workshops", "Code Reviews", "Technology Strategy", "Skill Development"],
       achievements: ["Led 15+ technical workshops", "Organized coding competitions", "Mentored 50+ students"],
       skills: ["Full-Stack Development", "System Design", "Workshop Leadership", "Mentoring"],
       icon: Code,
       contact: {
-        email: "tech@neofolks.com"
+        email: "yatharth@neofolks.com"
       }
     },
     {
-      id: "creative-lead",
-      name: "Creative Lead",
-      role: "Design & Creative Direction",
+      id: "dharmin-nagar",
+      name: "Dharmin Nagar",
+      role: "Social Media Lead",
+      shortBio: "Managing digital presence and social media strategy",
+      fullBio: "Dharmin Nagar leads Neofolks' social media presence and digital marketing efforts. He develops creative content strategies, manages social platforms, and ensures consistent brand messaging across all digital channels.",
+      responsibilities: ["Social Media Management", "Content Creation", "Digital Strategy", "Brand Communications"],
+      achievements: ["Grew social media following by 200%", "Created engaging content campaigns", "Enhanced brand visibility"],
+      skills: ["Social Media Marketing", "Content Strategy", "Analytics", "Brand Management"],
+      icon: Megaphone,
+      contact: {
+        email: "dharmin@neofolks.com"
+      }
+    },
+    {
+      id: "birva-dholakiya",
+      name: "Birva Dholakiya",
+      role: "Operations Lead",
+      shortBio: "Managing operations and ensuring smooth event execution",
+      fullBio: "Birva Dholakiya oversees all operational aspects of Neofolks, from event planning to resource management. She ensures efficient operations and coordinates logistics for all club activities and initiatives.",
+      responsibilities: ["Operations Management", "Event Coordination", "Resource Planning", "Process Optimization"],
+      achievements: ["Streamlined operational processes", "Improved event efficiency", "Enhanced resource utilization"],
+      skills: ["Project Management", "Operations Planning", "Team Coordination", "Process Improvement"],
+      icon: TrendingUp,
+      contact: {
+        email: "birva@neofolks.com"
+      }
+    },
+    {
+      id: "pankhi-shukla",
+      name: "Pankhi Shukla",
+      role: "Design Lead",
       shortBio: "Leading design initiatives and visual identity for Neofolks",
-      fullBio: "Our Creative Lead manages all design aspects of Neofolks, from visual branding to event materials. They ensure consistent visual identity across all platforms and create engaging content that represents our tech community.",
+      fullBio: "Pankhi Shukla manages all design aspects of Neofolks, from visual branding to event materials. She ensures consistent visual identity across all platforms and creates engaging content that represents our tech community.",
       responsibilities: ["Brand Design", "Event Graphics", "Social Media Visuals", "Creative Strategy"],
-      achievements: ["Redesigned club branding", "Created design system", "Increased visual engagement"],
+      achievements: ["Redesigned club branding", "Created comprehensive design system", "Increased visual engagement"],
       skills: ["Graphic Design", "Brand Identity", "Adobe Creative Suite", "UI/UX Design"],
       icon: Palette,
       contact: {
-        email: "creative@neofolks.com"
-      }
-    },
-    {
-      id: "outreach-lead",
-      name: "Outreach Lead",
-      role: "External Relations & Partnerships",
-      shortBio: "Building partnerships and expanding Neofolks' network",
-      fullBio: "The Outreach Lead develops partnerships with industry professionals, other tech communities, and organizations. They coordinate collaboration opportunities and help expand Neofolks' reach beyond the university.",
-      responsibilities: ["Industry Partnerships", "Inter-University Collaboration", "Speaker Coordination", "Network Building"],
-      achievements: ["Established 5+ industry partnerships", "Organized guest speaker series", "Built inter-college network"],
-      skills: ["Partnership Development", "Communication", "Networking", "Project Management"],
-      icon: TrendingUp,
-      contact: {
-        email: "outreach@neofolks.com"
-      }
-    },
-    {
-      id: "marketing-lead",
-      name: "Marketing Lead", 
-      role: "Digital Marketing & Communications",
-      shortBio: "Managing digital presence and marketing initiatives",
-      fullBio: "Our Marketing Lead handles all aspects of Neofolks' digital marketing, from social media management to content creation. They develop marketing strategies that effectively communicate our mission and attract new members.",
-      responsibilities: ["Social Media Management", "Content Strategy", "Digital Marketing", "Brand Communications"],
-      achievements: ["Grew social media following by 200%", "Launched successful recruitment campaigns", "Created engaging content series"],
-      skills: ["Social Media Marketing", "Content Creation", "Analytics", "Brand Management"],
-      icon: Megaphone,
-      contact: {
-        email: "marketing@neofolks.com"
-      }
-    },
-    {
-      id: "events-coordinator",
-      name: "Events Coordinator",
-      role: "Event Planning & Management", 
-      shortBio: "Organizing and managing all Neofolks events and activities",
-      fullBio: "The Events Coordinator is responsible for planning, organizing, and executing all Neofolks events, from workshops to tech talks to social gatherings. They ensure smooth event operations and memorable experiences for all participants.",
-      responsibilities: ["Event Planning", "Logistics Management", "Vendor Coordination", "Registration Management"],
-      achievements: ["Organized 20+ successful events", "Managed events with 200+ attendees", "Streamlined event processes"],
-      skills: ["Event Management", "Project Coordination", "Budget Management", "Team Leadership"],
-      icon: MessageSquare,
-      contact: {
-        email: "events@neofolks.com"
+        email: "pankhi@neofolks.com"
       }
     }
   ];
