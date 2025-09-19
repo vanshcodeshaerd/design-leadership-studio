@@ -4,61 +4,138 @@ import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  // Geometric shapes data for animations
+  const geometricShapes = [
+    { id: 1, type: 'diamond', top: '15%', left: '10%', delay: '0s' },
+    { id: 2, type: 'circle', top: '25%', right: '15%', delay: '1s' },
+    { id: 3, type: 'triangle', top: '35%', left: '8%', delay: '2s' },
+    { id: 4, type: 'star', top: '45%', right: '12%', delay: '0.5s' },
+    { id: 5, type: 'line', top: '55%', left: '5%', delay: '1.5s' },
+    { id: 6, type: 'square', top: '65%', right: '8%', delay: '2.5s' },
+    { id: 7, type: 'diamond', top: '20%', left: '85%', delay: '3s' },
+    { id: 8, type: 'circle', top: '75%', left: '15%', delay: '0.8s' },
+    { id: 9, type: 'triangle', top: '30%', right: '25%', delay: '1.2s' },
+    { id: 10, type: 'star', top: '70%', right: '20%', delay: '2.2s' },
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="min-h-[90vh] flex items-center justify-center relative overflow-hidden">
+      {/* Hero Section - Neofolks Design */}
+      <section className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
         {/* Background Effects */}
-        <div className="absolute inset-0 hero-gradient opacity-20" />
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float floating-delayed" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-purple-900/20" />
+        
+        {/* Geometric Shapes */}
+        {geometricShapes.map((shape) => (
+          <div
+            key={shape.id}
+            className={`geometric-shape shape-${shape.type}`}
+            style={{
+              top: shape.top,
+              left: shape.left,
+              right: shape.right,
+              animationDelay: shape.delay,
+            }}
+          />
+        ))}
+
+        {/* University Logo Area */}
+        <div className="absolute top-8 left-8 z-20">
+          <div className="flex items-center space-x-3">
+            <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center">
+              <span className="text-white font-bold text-lg">N</span>
+            </div>
+            <div className="hidden sm:block">
+              <div className="text-sm font-semibold text-foreground/90">NAVRACHANA</div>
+              <div className="text-xs text-muted-foreground">UNIVERSITY</div>
+            </div>
+          </div>
         </div>
 
-        {/* Content */}
-        <div className="container-padding relative z-10 text-center max-w-5xl mx-auto">
+        {/* Main Content */}
+        <div className="container-padding relative z-10 text-center max-w-6xl mx-auto">
           <div className="reveal-fade">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="block">Welcome to</span>
-              <span className="block text-gradient-primary">Neofolks</span>
+            {/* Main Neofolks Title */}
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold mb-8 leading-tight tracking-tight">
+              <span className="text-neofolks-gradient drop-shadow-2xl">
+                NeoFolks
+              </span>
             </h1>
             
-            <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              The premier technology club at Navrachana University, fostering innovation, 
-              creativity, and collaboration among students passionate about technology.
+            {/* Year Badge */}
+            <div className="inline-flex items-center justify-center mb-12">
+              <div className="year-badge px-8 py-3 rounded-lg">
+                <span className="text-2xl sm:text-3xl font-bold text-accent">2025</span>
+              </div>
+            </div>
+
+            {/* Subtitle */}
+            <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+              The premier technology community at Navrachana University
+              <br />
+              <span className="text-accent-light">Innovating • Learning • Growing Together</span>
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <Button 
                 variant="hero" 
                 size="xl" 
                 asChild
-                className="group"
+                className="group btn-premium text-lg px-8 py-4"
               >
                 <Link to="/about">
-                  Learn More About Us 
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  Discover Our Journey
+                  <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Button 
                 variant="glass" 
                 size="xl" 
                 asChild
+                className="btn-premium text-lg px-8 py-4"
               >
                 <Link to="/join">
-                  Join Our Community
+                  Join The Community
                 </Link>
               </Button>
             </div>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-accent mb-2">500+</div>
+                <div className="text-sm text-muted-foreground">Active Members</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-accent mb-2">50+</div>
+                <div className="text-sm text-muted-foreground">Tech Events</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-accent mb-2">25+</div>
+                <div className="text-sm text-muted-foreground">Projects Built</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-accent mb-2">5+</div>
+                <div className="text-sm text-muted-foreground">Years Strong</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-accent/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-accent rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
 
-      {/* Quick Overview */}
+      {/* What We Do Section */}
       <section className="section-padding bg-card/20">
         <div className="container mx-auto container-padding">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-gradient-primary">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gradient-primary">
               What We Do
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -114,8 +191,12 @@ const Index = () => {
       {/* Call to Action */}
       <section className="section-padding">
         <div className="container mx-auto container-padding text-center">
-          <div className="glass-card rounded-2xl p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+          <div className="glass-card rounded-2xl p-12 max-w-4xl mx-auto relative overflow-hidden">
+            {/* Background geometric elements */}
+            <div className="absolute top-4 right-4 geometric-shape shape-diamond opacity-30" />
+            <div className="absolute bottom-4 left-4 geometric-shape shape-circle opacity-30" />
+            
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gradient-primary">
               Ready to Join Our Tech Journey?
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -123,13 +204,13 @@ const Index = () => {
               for you in our growing community at Navrachana University.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="xl" asChild>
+              <Button variant="hero" size="xl" asChild className="btn-premium">
                 <Link to="/join">
                   Become a Member
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button variant="leadership" size="xl" asChild>
+              <Button variant="leadership" size="xl" asChild className="btn-premium">
                 <Link to="/events">
                   View Upcoming Events
                 </Link>

@@ -7,20 +7,20 @@
 /* Premium Tech Leadership Design System */
 @layer base {
   :root {
-    /* Primary Colors - Tech Leadership Purple Theme */
-    --background: 237 9% 6%; /* #0F0B16 */
+    /* Primary Colors - Enhanced Dark Tech Theme */
+    --background: 237 23% 9%; /* Deep navy purple */
     --foreground: 255 95% 95%; /* #E8E6FF */
 
-    --card: 252 14% 9%; /* #17121B */
+    --card: 252 20% 12%; /* #1A1625 */
     --card-foreground: 255 95% 95%;
 
-    --popover: 252 14% 9%;
+    --popover: 252 20% 12%;
     --popover-foreground: 255 95% 95%;
 
-    --primary: 261 40% 35%; /* #4B2E83 */
+    --primary: 261 50% 45%; /* Rich purple */
     --primary-foreground: 255 95% 95%;
     
-    --primary-glow: 261 60% 60%; /* #6A4ED6 */
+    --primary-glow: 280 70% 65%; /* Bright purple-pink */
     --primary-muted: 261 35% 25%;
 
     --secondary: 252 14% 12%;
@@ -29,21 +29,29 @@
     --muted: 252 8% 15%;
     --muted-foreground: 255 15% 70%;
 
-    --accent: 261 60% 60%; /* #6A4ED6 */
-    --accent-foreground: 255 95% 95%;
-    --accent-light: 255 95% 95%; /* #E8E6FF */
+    --accent: 45 100% 65%; /* Golden yellow */
+    --accent-foreground: 237 23% 9%;
+    --accent-light: 280 70% 75%; /* Light purple-pink */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 252 20% 20%;
+    --border: 252 20% 25%;
     --input: 252 20% 20%;
     --ring: 261 60% 60%;
 
     --radius: 0.75rem;
 
-    /* Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    /* Enhanced Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, 
+      hsl(280, 70%, 65%), 
+      hsl(320, 80%, 70%), 
+      hsl(45, 100%, 65%));
+    --gradient-neofolks: linear-gradient(90deg, 
+      hsl(280, 70%, 65%), 
+      hsl(320, 80%, 70%), 
+      hsl(15, 90%, 70%), 
+      hsl(45, 100%, 65%));
     --gradient-secondary: linear-gradient(135deg, hsl(var(--primary-muted)), hsl(var(--primary)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
     --gradient-glow: linear-gradient(135deg, 
@@ -51,11 +59,20 @@
       hsl(var(--primary-glow) / 0.6), 
       hsl(var(--accent) / 0.4));
 
+    /* Geometric Shapes Colors */
+    --shape-purple: hsl(280, 70%, 65%);
+    --shape-pink: hsl(320, 80%, 70%);
+    --shape-orange: hsl(15, 90%, 70%);
+    --shape-yellow: hsl(45, 100%, 65%);
+    --shape-green: hsl(150, 80%, 60%);
+    --shape-blue: hsl(220, 80%, 70%);
+
     /* Shadows & Effects */
     --shadow-primary: 0 10px 30px -10px hsl(var(--primary) / 0.4);
     --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
     --shadow-card: 0 20px 40px -10px hsl(var(--primary) / 0.2);
     --shadow-elegant: 0 8px 25px -8px hsl(var(--primary) / 0.35);
+    --shadow-neon: 0 0 30px hsl(var(--primary-glow) / 0.5);
 
     /* Animations & Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -117,9 +134,18 @@
     background-clip: text;
   }
 
+  .neofolks-gradient {
+    background: var(--gradient-neofolks);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 4s ease-in-out infinite;
+  }
+
   /* Glassmorphism Cards */
   .glass-card {
-    background: rgba(23, 18, 27, 0.8);
+    background: rgba(26, 22, 37, 0.8);
     backdrop-filter: blur(20px);
     border: 1px solid hsl(var(--border));
     box-shadow: var(--shadow-card);
@@ -133,6 +159,80 @@
     transform: translateY(-8px);
     box-shadow: var(--shadow-glow);
     border-color: hsl(var(--accent) / 0.5);
+  }
+
+  /* Geometric Shapes */
+  .geometric-shape {
+    position: absolute;
+    opacity: 0.6;
+    animation: float-rotate 8s ease-in-out infinite;
+  }
+
+  .shape-diamond {
+    width: 20px;
+    height: 20px;
+    background: var(--shape-purple);
+    transform: rotate(45deg);
+    border-radius: 2px;
+  }
+
+  .shape-circle {
+    width: 16px;
+    height: 16px;
+    background: var(--shape-pink);
+    border-radius: 50%;
+  }
+
+  .shape-triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 17px solid var(--shape-yellow);
+  }
+
+  .shape-star {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 12px solid var(--shape-orange);
+    position: relative;
+  }
+
+  .shape-star:before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid var(--shape-orange);
+  }
+
+  .shape-line {
+    width: 40px;
+    height: 2px;
+    background: var(--shape-blue);
+    border-radius: 1px;
+  }
+
+  .shape-square {
+    width: 12px;
+    height: 12px;
+    background: var(--shape-green);
+    border-radius: 2px;
+  }
+
+  /* Year Badge */
+  .year-badge {
+    background: rgba(26, 22, 37, 0.9);
+    backdrop-filter: blur(10px);
+    border: 2px solid hsl(var(--accent));
+    box-shadow: var(--shadow-neon);
+    animation: pulse-glow 3s ease-in-out infinite;
   }
 
   /* Animated Underlines */
@@ -222,12 +322,29 @@
   }
 }
 
-@keyframes pulse-glow {
+@keyframes float-rotate {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(90deg);
   }
   50% {
-    box-shadow: 0 0 40px hsl(var(--primary-glow) / 0.6);
+    transform: translateY(-10px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(270deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.5);
+    border-color: hsl(var(--accent));
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--accent) / 0.8);
+    border-color: hsl(var(--accent-light));
   }
 }
 
@@ -255,6 +372,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .text-neofolks-gradient {
+    background: var(--gradient-neofolks);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 4s ease-in-out infinite;
   }
 
   .bg-gradient-primary {
