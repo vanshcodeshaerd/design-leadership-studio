@@ -104,15 +104,15 @@ const Index = () => {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">500+</div>
+                <div className="text-3xl font-bold text-accent mb-2">40</div>
                 <div className="text-sm text-muted-foreground">Active Members</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">50+</div>
+                <div className="text-3xl font-bold text-accent mb-2">20+</div>
                 <div className="text-sm text-muted-foreground">Tech Events</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">25+</div>
+                <div className="text-3xl font-bold text-accent mb-2">10+</div>
                 <div className="text-sm text-muted-foreground">Projects Built</div>
               </div>
               <div className="text-center">
