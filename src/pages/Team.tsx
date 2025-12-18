@@ -27,7 +27,7 @@ const Team = () => {
       id: "vansh-shah",
       name: "Vansh Shah",
       role: "Tech Lead",
-      shortBio: "Managing the technical infrastructure of Neofolks",
+      shortBio: "Driving technical innovation at Neofolks by managing the website, digital platforms, and coordinating with the team to ensure seamless event planning and reliable digital operations.",
       fullBio:
         "Vansh manages the technical infrastructure of Neofolks, including the official website and digital platforms. He works closely with the entire team to keep event planning organized and structured. By contributing technical insights and supporting coordination, he ensures smooth execution and reliable digital operations.",
       responsibilities: [
@@ -48,7 +48,7 @@ const Team = () => {
       id: "rishi-kacchadia",
       name: "Rishi Kacchadia",
       role: "Marketing & Outreach Lead",
-      shortBio: "Leading marketing, outreach, and financial coordination for Neofolks",
+      shortBio: "Building strategic partnerships, managing sponsorships, and overseeing financial planning to ensure sustainable growth and strong external relationships for Neofolks.",
       fullBio:
         "Rishi leads marketing, outreach, and financial coordination for Neofolks. He manages collaborations with other clubs, handles sponsorships and funding, and oversees budgets and expenses. His role ensures strong external relationships and sustainable planning for all Neofolks initiatives.",
       responsibilities: [
@@ -64,7 +64,7 @@ const Team = () => {
       id: "zeeshan-vahora",
       name: "Zeeshan Vahora",
       role: "Event Operations Lead",
-      shortBio: "Overseeing all on-ground operations during Neofolks events",
+      shortBio: "Ensuring flawless event execution by managing logistics, venue coordination, and real-time operations. His expertise in handling timelines and resources makes every Neofolks event a success.",
       fullBio:
         "Zeeshan oversees all on-ground operations during Neofolks events. He manages logistics, venue arrangements, and real-time coordination to ensure everything runs smoothly. His ability to handle timelines, teams, and resources makes him essential to successful event execution.",
       responsibilities: [
@@ -80,7 +80,7 @@ const Team = () => {
       id: "siona-venuthurumilli",
       name: "Siona Venuthurumilli",
       role: "Social Media Lead",
-      shortBio: "Managing Neofolks' social media presence across platforms",
+      shortBio: "Crafting Neofolks' digital presence across Instagram and LinkedIn through creative reels, stories, and posts that reflect our brand identity and drive strong audience engagement.",
       fullBio:
         "Siona manages Neofolks' social media presence across platforms such as Instagram and LinkedIn. She plans, creates, and executes reels, stories, and posts that reflect the brand's identity and values. By combining creativity with consistency, she ensures strong audience engagement and a recognizable digital presence for Neofolks.",
       responsibilities: [
@@ -96,7 +96,7 @@ const Team = () => {
       id: "dhyey-chatrala",
       name: "Dhyey Chatrala",
       role: "Design Lead",
-      shortBio: "Overseeing the complete visual identity of Neofolks",
+      shortBio: "Shaping Neofolks' visual identity through event posters, social media creatives, certificates, and décor. His attention to detail ensures aesthetic consistency across all platforms.",
       fullBio:
         "Dhyey oversees the complete visual identity of Neofolks. He designs event posters, social media creatives, certificates, mementos, and décor elements. Through thoughtful design and attention to detail, he ensures visual consistency across all platforms and events, enhancing the overall brand experience.",
       responsibilities: [
@@ -112,7 +112,7 @@ const Team = () => {
       id: "dhvani-gohel",
       name: "Dhvani Gohel",
       role: "Content Lead",
-      shortBio: "Handling all written communication for Neofolks",
+      shortBio: "Crafting all written communication for Neofolks with clarity and professionalism—from promotional content and emails to social media captions that strengthen our brand voice.",
       fullBio:
         "Dhvani handles all written communication for Neofolks, ensuring clarity, professionalism, and consistency. She writes promotional content, emails, social media captions, and formal documents required for events. Her work helps communicate ideas effectively and strengthens Neofolks' voice across audiences.",
       responsibilities: [
