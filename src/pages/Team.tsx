@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Linkedin, Github, Users, Code, Palette, MessageSquare, TrendingUp, Megaphone } from "lucide-react";
+import { Mail, Linkedin, Github, Code, Palette, MessageSquare, FileText, Settings, Megaphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import Footer from "@/components/Footer";
@@ -11,8 +11,6 @@ interface TeamMember {
   shortBio: string;
   fullBio: string;
   responsibilities: string[];
-  achievements: string[];
-  skills: string[];
   icon: any;
   contact?: {
     email?: string;
@@ -26,98 +24,105 @@ const Team = () => {
 
   const teamMembers: TeamMember[] = [
     {
-      id: "travon-bhagat",
-      name: "Travon Bhagat",
-      role: "Community Lead",
-      shortBio: "Leading community engagement and building connections at Neofolks",
+      id: "siona-venuthurumilli",
+      name: "Siona Venuthurumilli",
+      role: "Social Media Lead",
+      shortBio: "Managing Neofolks’ social media presence across platforms",
       fullBio:
-        "Travon Bhagat is the Community Lead at Neofolks, overseeing community engagement, member relations, and fostering a welcoming environment for all tech enthusiasts. With a passion for bringing people together and creating inclusive spaces, he organizes networking events and mentorship programs.",
-      responsibilities: ["Community Strategy", "Member Onboarding", "Event Planning", "Mentorship Programs"],
-      achievements: ["Built active community at NUV", "Organized 10+ tech events", "Launched mentorship initiative"],
-      skills: ["Community Management", "Event Planning", "Public Speaking", "Relationship Building"],
-      icon: Users,
-      contact: {
-        linkedin: "linkedin.com/in/travon-bhagat-neofolks",
-      },
+        "Siona manages Neofolks’ social media presence across platforms such as Instagram and LinkedIn. She plans, creates, and executes reels, stories, and posts that reflect the brand’s identity and values. By combining creativity with consistency, she ensures strong audience engagement and a recognizable digital presence for Neofolks.",
+      responsibilities: [
+        "Social Media Strategy",
+        "Reel & Story Creation",
+        "Platform Management",
+        "Creative Direction",
+        "Brand Communication",
+      ],
+      icon: MessageSquare,
     },
     {
-      id: "rishabh-gajiwala",
-      name: "Rishabh Gajiwala",
-      role: "Community Co-lead",
-      shortBio: "Supporting community initiatives and member engagement",
+      id: "dhyey-chatrala",
+      name: "Dhyey Chatrala",
+      role: "Design Lead",
+      shortBio: "Overseeing the complete visual identity of Neofolks",
       fullBio:
-        "Rishabh Gajiwala serves as Community Co-lead at Neofolks, working closely with the Community Lead to support member engagement and community building initiatives. He brings fresh perspectives and innovative ideas to community programs.",
-      responsibilities: ["Community Support", "Member Relations", "Program Coordination", "Event Assistance"],
-      achievements: ["Enhanced member onboarding", "Improved community feedback systems", "Coordinated social events"],
-      skills: ["Team Collaboration", "Communication", "Program Management", "Member Relations"],
-      icon: Users,
-      contact: {
-        linkedin: "linkedin.com/in/rishabh-gajiwala-neofolks",
-      },
+        "Dhyey oversees the complete visual identity of Neofolks. He designs event posters, social media creatives, certificates, mementos, and décor elements. Through thoughtful design and attention to detail, he ensures visual consistency across all platforms and events, enhancing the overall brand experience.",
+      responsibilities: [
+        "Graphic Design",
+        "Visual Branding",
+        "Event Creatives",
+        "Print & Digital Assets",
+        "Aesthetic Consistency",
+      ],
+      icon: Palette,
+    },
+    {
+      id: "dhvani-gohel",
+      name: "Dhvani Gohel",
+      role: "Content Lead",
+      shortBio: "Handling all written communication for Neofolks",
+      fullBio:
+        "Dhvani handles all written communication for Neofolks, ensuring clarity, professionalism, and consistency. She writes promotional content, emails, social media captions, and formal documents required for events. Her work helps communicate ideas effectively and strengthens Neofolks’ voice across audiences.",
+      responsibilities: [
+        "Content Writing",
+        "Promotional Messaging",
+        "Email Communication",
+        "Documentation",
+        "Brand Voice Management",
+      ],
+      icon: FileText,
     },
     {
       id: "vansh-shah",
       name: "Vansh Shah",
-      role: "Technical Lead",
-      shortBio: "Driving technical innovation and leading development workshops",
+      role: "Tech Lead",
+      shortBio: "Managing the technical infrastructure of Neofolks",
       fullBio:
-        "Yatharth Singh Panwar guides members in learning new technologies and maintains the club's technical standards. He organizes coding workshops, hackathons, and technical competitions while ensuring knowledge sharing across the community.",
-      responsibilities: ["Technical Workshops", "Code Reviews", "Technology Strategy", "Skill Development"],
-      achievements: ["Led 15+ technical workshops", "Organized coding competitions", "Mentored 50+ students"],
-      skills: ["Full-Stack Development", "System Design", "Workshop Leadership", "Mentoring"],
+        "Vansh manages the technical infrastructure of Neofolks, including the official website and digital platforms. He works closely with the entire team to keep event planning organized and structured. By contributing technical insights and supporting coordination, he ensures smooth execution and reliable digital operations.",
+      responsibilities: [
+        "Website Management",
+        "Technical Planning",
+        "Team Coordination",
+        "Digital Infrastructure",
+        "Event Organization",
+      ],
       icon: Code,
       contact: {
         email: "vansh.n.shah@nuv.ac.in",
+        github: "github.com/vanshcodeshaerd",
+        linkedin: "www.linkedin.com/in/vansh-shah-0bbb46309/",
       },
     },
     {
-      id: "siona-venuthurumilli",
-      name: "Siona Venuthurumilli",
-      role: "Social Media Lead",
-      shortBio: "Managing digital presence and social media strategy",
+      id: "zeeshan-vahora",
+      name: "Zeeshan Vahora",
+      role: "Event Operations Lead",
+      shortBio: "Overseeing all on-ground operations during Neofolks events",
       fullBio:
-        "Dharmin Nagar leads Neofolks' social media presence and digital marketing efforts. He develops creative content strategies, manages social platforms, and ensures consistent brand messaging across all digital channels.",
-      responsibilities: ["Social Media Management", "Content Creation", "Digital Strategy", "Brand Communications"],
-      achievements: [
-        "Grew social media following by 200%",
-        "Created engaging content campaigns",
-        "Enhanced brand visibility",
+        "Zeeshan oversees all on-ground operations during Neofolks events. He manages logistics, venue arrangements, and real-time coordination to ensure everything runs smoothly. His ability to handle timelines, teams, and resources makes him essential to successful event execution.",
+      responsibilities: [
+        "Event Execution",
+        "Logistics Management",
+        "On-Ground Coordination",
+        "Operations Planning",
+        "Resource Management",
       ],
-      skills: ["Social Media Marketing", "Content Strategy", "Analytics", "Brand Management"],
+      icon: Settings,
+    },
+    {
+      id: "rishi-kacchadia",
+      name: "Rishi Kacchadia",
+      role: "Marketing & Outreach Lead",
+      shortBio: "Leading marketing, outreach, and financial coordination for Neofolks",
+      fullBio:
+        "Rishi leads marketing, outreach, and financial coordination for Neofolks. He manages collaborations with other clubs, handles sponsorships and funding, and oversees budgets and expenses. His role ensures strong external relationships and sustainable planning for all Neofolks initiatives.",
+      responsibilities: [
+        "Marketing Strategy",
+        "Outreach & Collaborations",
+        "Sponsorship Management",
+        "Financial Planning",
+        "Budget Oversight",
+      ],
       icon: Megaphone,
-      contact: {
-        email: "",
-      },
-    },
-    {
-      id: "zeeshan-vohra",
-      name: "Zeeshan Vohra",
-      role: "Operations Lead",
-      shortBio: "Managing operations and ensuring smooth event execution",
-      fullBio:
-        "Birva Dholakiya oversees all operational aspects of Neofolks, from event planning to resource management. She ensures efficient operations and coordinates logistics for all club activities and initiatives.",
-      responsibilities: ["Operations Management", "Event Coordination", "Resource Planning", "Process Optimization"],
-      achievements: ["Streamlined operational processes", "Improved event efficiency", "Enhanced resource utilization"],
-      skills: ["Project Management", "Operations Planning", "Team Coordination", "Process Improvement"],
-      icon: TrendingUp,
-      contact: {
-        email: "birva@neofolks.com",
-      },
-    },
-    {
-      id: "dhyey-chhartrala",
-      name: "Dhyey Chhatrala",
-      role: "Design Lead",
-      shortBio: "Leading design initiatives and visual identity for Neofolks",
-      fullBio:
-        "Pankhi Shukla manages all design aspects of Neofolks, from visual branding to event materials. She ensures consistent visual identity across all platforms and creates engaging content that represents our tech community.",
-      responsibilities: ["Brand Design", "Event Graphics", "Social Media Visuals", "Creative Strategy"],
-      achievements: ["Redesigned club branding", "Created comprehensive design system", "Increased visual engagement"],
-      skills: ["Graphic Design", "Brand Identity", "Adobe Creative Suite", "UI/UX Design"],
-      icon: Palette,
-      contact: {
-        email: "pankhi@neofolks.com",
-      },
     },
   ];
 
@@ -201,30 +206,6 @@ const Team = () => {
                   </div>
                 </div>
 
-                {/* Key Achievements */}
-                <div>
-                  <h4 className="font-semibold mb-3">Key Achievements</h4>
-                  <ul className="space-y-2">
-                    {selectedMember.achievements.map((achievement, index) => (
-                      <li key={index} className="text-muted-foreground flex items-start gap-2">
-                        <span className="text-accent mt-1">•</span>
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Skills */}
-                <div>
-                  <h4 className="font-semibold mb-3">Core Skills</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedMember.skills.map((skill, index) => (
-                      <span key={index} className="bg-gradient-primary text-white px-3 py-1 rounded-full text-sm">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
 
                 {/* Contact */}
                 {selectedMember.contact && (
