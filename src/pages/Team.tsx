@@ -24,12 +24,65 @@ const Team = () => {
 
   const teamMembers: TeamMember[] = [
     {
+      id: "vansh-shah",
+      name: "Vansh Shah",
+      role: "Tech Lead",
+      shortBio: "Managing the technical infrastructure of Neofolks",
+      fullBio:
+        "Vansh manages the technical infrastructure of Neofolks, including the official website and digital platforms. He works closely with the entire team to keep event planning organized and structured. By contributing technical insights and supporting coordination, he ensures smooth execution and reliable digital operations.",
+      responsibilities: [
+        "Website Management",
+        "Technical Planning",
+        "Team Coordination",
+        "Digital Infrastructure",
+        "Event Organization",
+      ],
+      icon: Code,
+      contact: {
+        email: "vansh.n.shah@nuv.ac.in",
+        github: "github.com/vanshcodeshaerd",
+        linkedin: "www.linkedin.com/in/vansh-shah-0bbb46309/",
+      },
+    },
+    {
+      id: "rishi-kacchadia",
+      name: "Rishi Kacchadia",
+      role: "Marketing & Outreach Lead",
+      shortBio: "Leading marketing, outreach, and financial coordination for Neofolks",
+      fullBio:
+        "Rishi leads marketing, outreach, and financial coordination for Neofolks. He manages collaborations with other clubs, handles sponsorships and funding, and oversees budgets and expenses. His role ensures strong external relationships and sustainable planning for all Neofolks initiatives.",
+      responsibilities: [
+        "Marketing Strategy",
+        "Outreach & Collaborations",
+        "Sponsorship Management",
+        "Financial Planning",
+        "Budget Oversight",
+      ],
+      icon: Megaphone,
+    },
+    {
+      id: "zeeshan-vahora",
+      name: "Zeeshan Vahora",
+      role: "Event Operations Lead",
+      shortBio: "Overseeing all on-ground operations during Neofolks events",
+      fullBio:
+        "Zeeshan oversees all on-ground operations during Neofolks events. He manages logistics, venue arrangements, and real-time coordination to ensure everything runs smoothly. His ability to handle timelines, teams, and resources makes him essential to successful event execution.",
+      responsibilities: [
+        "Event Execution",
+        "Logistics Management",
+        "On-Ground Coordination",
+        "Operations Planning",
+        "Resource Management",
+      ],
+      icon: Settings,
+    },
+    {
       id: "siona-venuthurumilli",
       name: "Siona Venuthurumilli",
       role: "Social Media Lead",
-      shortBio: "Managing Neofolks’ social media presence across platforms",
+      shortBio: "Managing Neofolks' social media presence across platforms",
       fullBio:
-        "Siona manages Neofolks’ social media presence across platforms such as Instagram and LinkedIn. She plans, creates, and executes reels, stories, and posts that reflect the brand’s identity and values. By combining creativity with consistency, she ensures strong audience engagement and a recognizable digital presence for Neofolks.",
+        "Siona manages Neofolks' social media presence across platforms such as Instagram and LinkedIn. She plans, creates, and executes reels, stories, and posts that reflect the brand's identity and values. By combining creativity with consistency, she ensures strong audience engagement and a recognizable digital presence for Neofolks.",
       responsibilities: [
         "Social Media Strategy",
         "Reel & Story Creation",
@@ -61,7 +114,7 @@ const Team = () => {
       role: "Content Lead",
       shortBio: "Handling all written communication for Neofolks",
       fullBio:
-        "Dhvani handles all written communication for Neofolks, ensuring clarity, professionalism, and consistency. She writes promotional content, emails, social media captions, and formal documents required for events. Her work helps communicate ideas effectively and strengthens Neofolks’ voice across audiences.",
+        "Dhvani handles all written communication for Neofolks, ensuring clarity, professionalism, and consistency. She writes promotional content, emails, social media captions, and formal documents required for events. Her work helps communicate ideas effectively and strengthens Neofolks' voice across audiences.",
       responsibilities: [
         "Content Writing",
         "Promotional Messaging",
@@ -70,59 +123,6 @@ const Team = () => {
         "Brand Voice Management",
       ],
       icon: FileText,
-    },
-    {
-      id: "vansh-shah",
-      name: "Vansh Shah",
-      role: "Tech Lead",
-      shortBio: "Managing the technical infrastructure of Neofolks",
-      fullBio:
-        "Vansh manages the technical infrastructure of Neofolks, including the official website and digital platforms. He works closely with the entire team to keep event planning organized and structured. By contributing technical insights and supporting coordination, he ensures smooth execution and reliable digital operations.",
-      responsibilities: [
-        "Website Management",
-        "Technical Planning",
-        "Team Coordination",
-        "Digital Infrastructure",
-        "Event Organization",
-      ],
-      icon: Code,
-      contact: {
-        email: "vansh.n.shah@nuv.ac.in",
-        github: "github.com/vanshcodeshaerd",
-        linkedin: "www.linkedin.com/in/vansh-shah-0bbb46309/",
-      },
-    },
-    {
-      id: "zeeshan-vahora",
-      name: "Zeeshan Vahora",
-      role: "Event Operations Lead",
-      shortBio: "Overseeing all on-ground operations during Neofolks events",
-      fullBio:
-        "Zeeshan oversees all on-ground operations during Neofolks events. He manages logistics, venue arrangements, and real-time coordination to ensure everything runs smoothly. His ability to handle timelines, teams, and resources makes him essential to successful event execution.",
-      responsibilities: [
-        "Event Execution",
-        "Logistics Management",
-        "On-Ground Coordination",
-        "Operations Planning",
-        "Resource Management",
-      ],
-      icon: Settings,
-    },
-    {
-      id: "rishi-kacchadia",
-      name: "Rishi Kacchadia",
-      role: "Marketing & Outreach Lead",
-      shortBio: "Leading marketing, outreach, and financial coordination for Neofolks",
-      fullBio:
-        "Rishi leads marketing, outreach, and financial coordination for Neofolks. He manages collaborations with other clubs, handles sponsorships and funding, and oversees budgets and expenses. His role ensures strong external relationships and sustainable planning for all Neofolks initiatives.",
-      responsibilities: [
-        "Marketing Strategy",
-        "Outreach & Collaborations",
-        "Sponsorship Management",
-        "Financial Planning",
-        "Budget Oversight",
-      ],
-      icon: Megaphone,
     },
   ];
 
