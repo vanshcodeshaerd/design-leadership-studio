@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Linkedin, Github, Users, Code, Palette, MessageSquare, TrendingUp, Megaphone } from "lucide-react";
+import { Mail, Linkedin, Github, Code, Palette, MessageSquare, FileText, Settings, Megaphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
@@ -10,8 +10,6 @@ interface TeamMember {
   shortBio: string;
   fullBio: string;
   responsibilities: string[];
-  achievements: string[];
-  skills: string[];
   icon: any;
   contact?: {
     email?: string;
@@ -25,31 +23,43 @@ const Team = () => {
 
   const teamMembers: TeamMember[] = [
     {
-      id: "community-lead",
-      name: "Community Lead",
-      role: "Building Connections",
-      shortBio: "Expert in community engagement and relationship building",
+      id: "social-lead",
+      name: "Siona Venuthurumilli",
+      role: "Social Media Lead",
+      shortBio: "Managing Neofolks' social media presence across platforms",
       fullBio:
-        "Oversees community engagement, member relations, and fosters a welcoming environment for all tech enthusiasts. With 5+ years of community management experience, focuses on creating inclusive spaces where innovation thrives.",
-      responsibilities: ["Community Strategy", "Member Onboarding", "Event Planning", "Mentorship Programs"],
-      achievements: ["Grew community by 400%", "Organized 50+ networking events", "Launched mentorship program"],
-      skills: ["Community Management", "Event Planning", "Public Speaking", "Relationship Building"],
-      icon: Users,
-      contact: {
-        email: "community@example.com",
-        linkedin: "linkedin.com/in/community-lead",
-      },
+        "Siona manages Neofolks' social media presence across platforms such as Instagram and LinkedIn. She plans, creates, and executes reels, stories, and posts that reflect the brand's identity and values. By combining creativity with consistency, she ensures strong audience engagement and a recognizable digital presence for Neofolks.",
+      responsibilities: ["Social Media Strategy", "Reel & Story Creation", "Platform Management", "Creative Direction", "Brand Communication"],
+      icon: MessageSquare,
+    },
+    {
+      id: "design-lead",
+      name: "Dhyey Chatrala",
+      role: "Design Lead",
+      shortBio: "Overseeing the complete visual identity of Neofolks",
+      fullBio:
+        "Dhyey oversees the complete visual identity of Neofolks. He designs event posters, social media creatives, certificates, mementos, and décor elements. Through thoughtful design and attention to detail, he ensures visual consistency across all platforms and events, enhancing the overall brand experience.",
+      responsibilities: ["Graphic Design", "Visual Branding", "Event Creatives", "Print & Digital Assets", "Aesthetic Consistency"],
+      icon: Palette,
+    },
+    {
+      id: "content-lead",
+      name: "Dhvani Gohel",
+      role: "Content Lead",
+      shortBio: "Handling all written communication for Neofolks",
+      fullBio:
+        "Dhvani handles all written communication for Neofolks, ensuring clarity, professionalism, and consistency. She writes promotional content, emails, social media captions, and formal documents required for events. Her work helps communicate ideas effectively and strengthens Neofolks' voice across audiences.",
+      responsibilities: ["Content Writing", "Promotional Messaging", "Email Communication", "Documentation", "Brand Voice Management"],
+      icon: FileText,
     },
     {
       id: "tech-lead",
-      name: "Technical Lead",
-      role: "Technical Excellence",
-      shortBio: "Senior engineer driving technical innovation and best practices",
+      name: "Vansh Shah",
+      role: "Tech Lead",
+      shortBio: "Managing the technical infrastructure of Neofolks",
       fullBio:
-        "Leads technical workshops, hackathons, and coding competitions. Guides members in learning new technologies and maintains the club's technical standards. Expert in full-stack development and system architecture.",
-      responsibilities: ["Technical Architecture", "Code Reviews", "Workshop Leadership", "Technology Strategy"],
-      achievements: ["Reduced deployment time by 80%", "Led 20+ technical workshops", "Mentored 100+ developers"],
-      skills: ["React", "Node.js", "System Design", "DevOps", "Mentoring"],
+        "Vansh manages the technical infrastructure of Neofolks, including the official website and digital platforms. He works closely with the entire team to keep event planning organized and structured. By contributing technical insights and supporting coordination, he ensures smooth execution and reliable digital operations.",
+      responsibilities: ["Website Management", "Technical Planning", "Team Coordination", "Digital Infrastructure", "Event Organization"],
       icon: Code,
       contact: {
         email: "vansh.n.shah@nuv.ac.in",
@@ -58,76 +68,24 @@ const Team = () => {
       },
     },
     {
-      id: "design-lead",
-      name: "Design Lead",
-      role: "Visual Identity & UX",
-      shortBio: "Creative designer focused on user experience and visual excellence",
+      id: "operations-lead",
+      name: "Zeeshan Vahora",
+      role: "Event Operations Lead",
+      shortBio: "Overseeing all on-ground operations during events",
       fullBio:
-        "Designs club branding, event materials, and digital assets. Ensures consistent visual identity across all club communications and platforms. Specializes in creating user-centered design solutions.",
-      responsibilities: ["Brand Design", "UI/UX Design", "Design Systems", "Creative Direction"],
-      achievements: [
-        "Redesigned brand identity",
-        "Improved user satisfaction by 60%",
-        "Created comprehensive design system",
-      ],
-      skills: ["Figma", "Adobe Creative Suite", "Design Systems", "User Research", "Prototyping"],
-      icon: Palette,
-      contact: {
-        email: "design@example.com",
-        linkedin: "linkedin.com/in/design-lead",
-      },
-    },
-    {
-      id: "social-lead",
-      name: "Social Media Lead",
-      role: "Digital Presence",
-      shortBio: "Digital marketing expert building online community engagement",
-      fullBio:
-        "Manages social media platforms, creates engaging content, and builds online community. Handles digital marketing and online event promotion with expertise in content strategy and audience growth.",
-      responsibilities: ["Social Media Strategy", "Content Creation", "Digital Marketing", "Analytics"],
-      achievements: ["10x social media engagement", "Built 50K+ follower base", "Viral campaign reach: 1M+"],
-      skills: ["Social Media Marketing", "Content Strategy", "Analytics", "Graphic Design", "Video Editing"],
-      icon: MessageSquare,
-      contact: {
-        email: "social@example.com",
-        linkedin: "linkedin.com/in/social-lead",
-      },
-    },
-    {
-      id: "growth-lead",
-      name: "Growth & Strategy Lead",
-      role: "Business Development",
-      shortBio: "Strategic leader focused on partnerships and organizational growth",
-      fullBio:
-        "Develops partnerships with industry leaders, manages club recruitment, and coordinates outreach programs to expand our network. Expert in business development and strategic planning.",
-      responsibilities: ["Partnership Development", "Strategic Planning", "Business Development", "Growth Analytics"],
-      achievements: ["20+ industry partnerships", "300% membership growth", "Launched scholarship program"],
-      skills: ["Business Strategy", "Partnership Management", "Analytics", "Project Management", "Negotiation"],
-      icon: TrendingUp,
-      contact: {
-        email: "growth@example.com",
-        linkedin: "linkedin.com/in/growth-lead",
-      },
+        "Zeeshan oversees all on-ground operations during Neofolks events. He manages logistics, venue arrangements, and real-time coordination to ensure everything runs smoothly. His ability to handle timelines, teams, and resources makes him essential to successful event execution.",
+      responsibilities: ["Event Execution", "Logistics Management", "On-Ground Coordination", "Operations Planning", "Resource Management"],
+      icon: Settings,
     },
     {
       id: "marketing-lead",
-      name: "Marketing Lead",
-      role: "Brand & Communications",
-      shortBio: "Marketing strategist driving brand awareness and communications",
+      name: "Rishi Kacchadia",
+      role: "Marketing & Outreach Lead",
+      shortBio: "Leading marketing, outreach, and financial coordination",
       fullBio:
-        "Leads marketing initiatives, brand communications, and public relations. Develops comprehensive marketing strategies to promote events, initiatives, and the organization's mission.",
-      responsibilities: ["Marketing Strategy", "Brand Communications", "PR Management", "Campaign Development"],
-      achievements: [
-        "Launched 5 successful campaigns",
-        "Increased brand awareness 250%",
-        "Award-winning marketing campaign",
-      ],
-      skills: ["Marketing Strategy", "Brand Management", "PR", "Campaign Management", "Data Analysis"],
+        "Rishi leads marketing, outreach, and financial coordination for Neofolks. He manages collaborations with other clubs, handles sponsorships and funding, and oversees budgets and expenses. His role ensures strong external relationships and sustainable planning for all Neofolks initiatives.",
+      responsibilities: ["Marketing Strategy", "Outreach & Collaborations", "Sponsorship Management", "Financial Planning", "Budget Oversight"],
       icon: Megaphone,
-      contact: {
-        email: "marketing@example.com",
-        linkedin: "linkedin.com/in/marketing-lead",
-      },
     },
   ];
 
@@ -205,30 +163,6 @@ const Team = () => {
                     </div>
                   </div>
 
-                  {/* Key Achievements */}
-                  <div>
-                    <h4 className="font-semibold mb-3">Key Achievements</h4>
-                    <ul className="space-y-2">
-                      {selectedMember.achievements.map((achievement, index) => (
-                        <li key={index} className="text-muted-foreground flex items-start gap-2">
-                          <span className="text-accent mt-1">•</span>
-                          {achievement}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Skills */}
-                  <div>
-                    <h4 className="font-semibold mb-3">Core Skills</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedMember.skills.map((skill, index) => (
-                        <span key={index} className="bg-gradient-primary text-white px-3 py-1 rounded-full text-sm">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
 
                   {/* Contact */}
                   {selectedMember.contact && (
