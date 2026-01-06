@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, Code, Calendar, Mail } from "lucide-react";
+import { ArrowRight, Users, Calendar, Lightbulb, MessageSquare, Sparkles, Code, Rocket, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
+import ParallaxSection from "@/components/ParallaxSection";
+import { useParallax } from "@/hooks/useParallax";
 
 const Index = () => {
+  const { offset: heroOffset } = useParallax({ speed: 0.4, direction: 'up' });
+  const { offset: shapesOffset } = useParallax({ speed: 0.2, direction: 'down' });
+
   // Geometric shapes data for animations
   const geometricShapes = [
     { id: 1, type: "diamond", top: "15%", left: "10%", delay: "0s" },
@@ -22,196 +27,292 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section - Neofolks Design */}
       <section className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-purple-900/20" />
-
-        {/* Geometric Shapes */}
-        {geometricShapes.map((shape) => (
-          <div
-            key={shape.id}
-            className={`geometric-shape shape-${shape.type}`}
-            style={{
-              top: shape.top,
-              left: shape.left,
-              right: shape.right,
-              animationDelay: shape.delay,
+        {/* Background Effects with Parallax */}
+        <div 
+          className="absolute inset-0 hero-gradient"
+          style={{ transform: `translateY(${heroOffset * 0.5}px)` }}
+        />
+        
+        {/* Animated gradient orbs */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full blur-[120px] opacity-30"
+            style={{ 
+              background: 'radial-gradient(circle, hsl(270, 60%, 50%) 0%, transparent 70%)',
+              transform: `translateY(${heroOffset * 0.3}px)`,
             }}
           />
-        ))}
-
-        {/* University Logo Area */}
-        <div className="absolute top-8 left-8 z-20">
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center">
-              <span className="text-white font-bold text-lg">N</span>
-            </div>
-            <div className="hidden sm:block">
-              <div className="text-sm font-semibold text-foreground/90">NAVRACHANA</div>
-              <div className="text-xs text-muted-foreground">UNIVERSITY</div>
-            </div>
-          </div>
+          <div 
+            className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full blur-[100px] opacity-25"
+            style={{ 
+              background: 'radial-gradient(circle, hsl(220, 70%, 45%) 0%, transparent 70%)',
+              transform: `translateY(${heroOffset * 0.4}px)`,
+            }}
+          />
+          <div 
+            className="absolute top-1/2 right-1/3 w-[300px] h-[300px] rounded-full blur-[80px] opacity-20"
+            style={{ 
+              background: 'radial-gradient(circle, hsl(180, 70%, 45%) 0%, transparent 70%)',
+              transform: `translateY(${heroOffset * 0.2}px)`,
+            }}
+          />
         </div>
 
-        {/* Main Content */}
-        <div className="container-padding relative z-10 text-center max-w-6xl mx-auto">
-          <div className="reveal-fade opacity-100">
-            {/* Main Neofolks Title */}
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold mb-8 leading-tight tracking-tight">
-              {/* Fallback visible text */}
-              <span className="text-white drop-shadow-2xl font-extrabold block mb-4">NeoFolks</span>
-              {/* Gradient text overlay */}
-              <span
-                className="text-neofolks-gradient drop-shadow-2xl font-extrabold absolute inset-0"
+        {/* Geometric Shapes with Parallax */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{ transform: `translateY(${shapesOffset}px)` }}
+        >
+          {geometricShapes.map((shape) => (
+            <div
+              key={shape.id}
+              className={`geometric-shape shape-${shape.type}`}
+              style={{
+                top: shape.top,
+                left: shape.left,
+                right: shape.right,
+                animationDelay: shape.delay,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Main Hero Content */}
+        <div className="relative z-10 text-center container-padding pt-20">
+          {/* Main Title */}
+          <div className="relative inline-block mb-8">
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight tracking-tight">
+              <span 
+                className="block glow-text"
                 style={{
-                  background: "linear-gradient(90deg, #B794F6, #F687B3, #FBB6CE, #FED7AA)",
+                  background: "linear-gradient(90deg, #A855F7, #6366F1, #06B6D4, #10B981)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
-                  display: "inline-block",
+                  backgroundSize: "300% 100%",
+                  animation: "gradient-shift 8s ease infinite",
                 }}
               >
                 NeoFolks
               </span>
             </h1>
+          </div>
 
-            {/* Year Badge */}
-            <div className="inline-flex items-center justify-center mb-12">
-              <div className="year-badge px-8 py-3 rounded-lg">
-                <span className="text-2xl sm:text-3xl font-bold text-accent">2025</span>
-              </div>
+          {/* Year Badge */}
+          <div className="inline-flex items-center justify-center mb-10">
+            <div className="year-badge px-8 py-3 rounded-xl">
+              <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">2025</span>
             </div>
+          </div>
 
-            {/* Subtitle */}
-            <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-              A student-led club at Navrachana University
-              <br />
-              <span className="text-accent-light">Innovating • Learning • Growing Together</span>
-            </p>
+          {/* Subtitle */}
+          <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+            A student-led tech community fostering
+            <br />
+            <span className="text-gradient-cyan font-medium">Innovation • Learning • Growth</span>
+          </p>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-              <Button variant="hero" size="xl" asChild className="group btn-premium text-lg px-8 py-4">
-                <Link to="/about">
-                  Discover Our Journey
-                  <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-              <Button variant="glass" size="xl" asChild className="btn-premium text-lg px-8 py-4">
-                <Link to="/join">Join The Community</Link>
-              </Button>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <Button 
+              className="btn-premium text-white px-8 py-6 text-lg font-medium rounded-xl group"
+              asChild
+            >
+              <Link to="/about">
+                Discover More
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+            <Button 
+              variant="outline"
+              className="px-8 py-6 text-lg font-medium rounded-xl border-border/50 hover:bg-white/5 hover:border-purple-500/50 transition-all"
+              asChild
+            >
+              <Link to="/team">
+                Meet The Team
+              </Link>
+            </Button>
+          </div>
+
+          {/* Quick Stats */}
+          <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-gradient-primary">50+</div>
+              <div className="text-sm text-muted-foreground mt-1">Active Members</div>
             </div>
-
-            {/* Quick Stats */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">40</div>
-                <div className="text-sm text-muted-foreground">Active Members</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">20+</div>
-                <div className="text-sm text-muted-foreground">Tech Events</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">10+</div>
-                <div className="text-sm text-muted-foreground">Projects Built</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">5+</div>
-                <div className="text-sm text-muted-foreground">Years Strong</div>
-              </div>
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-gradient-cyan">10+</div>
+              <div className="text-sm text-muted-foreground mt-1">Events Hosted</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-gradient-primary">5+</div>
+              <div className="text-sm text-muted-foreground mt-1">Projects</div>
             </div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-accent/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-accent rounded-full mt-2 animate-pulse"></div>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center pt-2">
+            <div className="w-1.5 h-3 bg-purple-500 rounded-full animate-pulse" />
           </div>
         </div>
       </section>
 
       {/* What We Do Section */}
-      <section className="section-padding bg-card/20">
-        <div className="container mx-auto container-padding">
+      <section className="section-padding relative overflow-hidden">
+        <div className="section-divider" />
+        
+        <ParallaxSection speed={0.15} className="container mx-auto container-padding">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gradient-primary">What We Do</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Neofolks connects students with technology through hands-on learning, community building, and real-world
-              projects.
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              <span className="text-gradient-primary">What We Do</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Empowering students through technology, community, and hands-on learning experiences.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="glass-card glass-card-hover rounded-xl p-6 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-4">
-                <Code className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Technical Workshops</h3>
-              <p className="text-muted-foreground">
-                Hands-on coding sessions, hackathons, and skill-building workshops
-              </p>
-            </div>
-
-            <div className="glass-card glass-card-hover rounded-xl p-6 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-4">
-                <Users className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Community Building</h3>
-              <p className="text-muted-foreground">Connect with like-minded students and build lasting friendships</p>
-            </div>
-
-            <div className="glass-card glass-card-hover rounded-xl p-6 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-4">
-                <Calendar className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Tech Events</h3>
-              <p className="text-muted-foreground">
-                Industry talks, competitions, and networking events throughout the year
-              </p>
-            </div>
-
-            <div className="glass-card glass-card-hover rounded-xl p-6 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-4">
-                <Mail className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Mentorship</h3>
-              <p className="text-muted-foreground">
-                Connect with seniors and industry professionals for guidance and support
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Code,
+                title: "Technical Workshops",
+                description: "Hands-on sessions covering web development, AI/ML, cloud computing, and emerging technologies.",
+                gradient: "from-purple-500 to-indigo-500"
+              },
+              {
+                icon: Users,
+                title: "Community Building",
+                description: "Creating a supportive network of tech enthusiasts who learn, grow, and innovate together.",
+                gradient: "from-indigo-500 to-blue-500"
+              },
+              {
+                icon: Calendar,
+                title: "Tech Events",
+                description: "Hackathons, tech talks, coding competitions, and industry expert sessions.",
+                gradient: "from-blue-500 to-cyan-500"
+              },
+              {
+                icon: Lightbulb,
+                title: "Mentorship",
+                description: "Guidance from experienced peers and industry professionals to accelerate your growth.",
+                gradient: "from-cyan-500 to-teal-500"
+              }
+            ].map((item, index) => (
+              <ParallaxSection 
+                key={index} 
+                speed={0.1} 
+                className="glass-card p-6 rounded-2xl group"
+              >
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
+                  <item.icon className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-foreground">{item.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+              </ParallaxSection>
+            ))}
           </div>
-        </div>
+        </ParallaxSection>
       </section>
 
-      {/* Call to Action */}
-      <section className="section-padding">
-        <div className="container mx-auto container-padding text-center">
-          <div className="glass-card rounded-2xl p-12 max-w-4xl mx-auto relative overflow-hidden">
-            {/* Background geometric elements */}
-            <div className="absolute top-4 right-4 geometric-shape shape-diamond opacity-30" />
-            <div className="absolute bottom-4 left-4 geometric-shape shape-circle opacity-30" />
-
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gradient-primary">
-              Ready to Join Our Tech Journey?
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Whether you're a beginner or an experienced developer, there's a place for you in our growing community at
-              Navrachana University.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="xl" asChild className="btn-premium">
-                <Link to="/join">
-                  Become a Member
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button variant="leadership" size="xl" asChild className="btn-premium">
-                <Link to="/events">View Upcoming Events</Link>
-              </Button>
+      {/* Features Highlight */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0 hero-gradient opacity-50" />
+        
+        <ParallaxSection speed={0.2} className="container mx-auto container-padding relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+                Why Join <span className="text-gradient-cyan">NeoFolks?</span>
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                Be part of a vibrant community that's shaping the future of technology at our university. 
+                Connect with like-minded individuals and unlock your potential.
+              </p>
+              
+              <div className="space-y-4">
+                {[
+                  { icon: Sparkles, text: "Access to exclusive workshops and resources" },
+                  { icon: Rocket, text: "Real-world project experience" },
+                  { icon: Star, text: "Network with industry professionals" },
+                  { icon: MessageSquare, text: "Collaborative learning environment" }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-4 group">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-cyan-500/20 flex items-center justify-center group-hover:from-purple-500/30 group-hover:to-cyan-500/30 transition-all">
+                      <item.icon className="h-5 w-5 text-purple-400" />
+                    </div>
+                    <span className="text-foreground/90">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="glass-card p-8 rounded-2xl">
+                <div className="text-center">
+                  <div className="text-6xl font-bold text-gradient-primary mb-4">Join Us</div>
+                  <p className="text-muted-foreground mb-6">
+                    Ready to start your journey with NeoFolks?
+                  </p>
+                  <Button 
+                    className="btn-premium text-white px-8 py-4 text-lg font-medium rounded-xl w-full group"
+                    asChild
+                  >
+                    <Link to="/join">
+                      Get Started
+                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </ParallaxSection>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="section-divider" />
+        
+        <ParallaxSection speed={0.15} className="container mx-auto container-padding">
+          <div className="glass-card p-8 sm:p-12 rounded-3xl text-center relative overflow-hidden">
+            {/* Background glow */}
+            <div className="absolute inset-0 opacity-30">
+              <div className="absolute top-0 left-1/4 w-64 h-64 bg-purple-500 rounded-full blur-[100px]" />
+              <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-cyan-500 rounded-full blur-[100px]" />
+            </div>
+            
+            <div className="relative z-10">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                Ready to <span className="text-gradient-cyan">Transform</span> Your Journey?
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Join the NeoFolks community and be part of something extraordinary.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  className="btn-premium text-white px-8 py-6 text-lg font-medium rounded-xl group"
+                  asChild
+                >
+                  <Link to="/join">
+                    Join the Community
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+                <Button 
+                  variant="outline"
+                  className="px-8 py-6 text-lg font-medium rounded-xl border-border/50 hover:bg-white/5 hover:border-cyan-500/50 transition-all"
+                  asChild
+                >
+                  <Link to="/events">
+                    View Events
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </ParallaxSection>
       </section>
 
       <Footer />
