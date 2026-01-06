@@ -70,9 +70,9 @@ const Index = () => {
         </div>
 
         {/* Main Hero Content */}
-        <div className="relative z-10 text-center container-padding pt-20">
+        <div className="relative z-10 text-center container-padding pt-16">
           {/* Main Title */}
-          <div className="relative inline-block mb-8">
+          <div className="relative inline-block mb-6">
             <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight tracking-tight">
               <span 
                 className="block glow-text"
@@ -91,23 +91,23 @@ const Index = () => {
           </div>
 
           {/* Year Badge */}
-          <div className="inline-flex items-center justify-center mb-10">
-            <div className="year-badge px-8 py-3 rounded-xl">
-              <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">2025</span>
+          <div className="inline-flex items-center justify-center mb-6">
+            <div className="year-badge px-6 py-2 rounded-xl">
+              <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">2025</span>
             </div>
           </div>
 
           {/* Subtitle */}
-          <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
             A student-led tech community fostering
             <br />
             <span className="text-gradient-cyan font-medium">Innovation • Learning • Growth</span>
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
             <Button 
-              className="btn-premium text-white px-8 py-6 text-lg font-medium rounded-xl group"
+              className="btn-premium text-white px-6 py-5 text-base font-medium rounded-xl group"
               asChild
             >
               <Link to="/about">
@@ -117,7 +117,7 @@ const Index = () => {
             </Button>
             <Button 
               variant="outline"
-              className="px-8 py-6 text-lg font-medium rounded-xl border-border/50 hover:bg-white/5 hover:border-purple-500/50 transition-all duration-300 ease-out"
+              className="px-6 py-5 text-base font-medium rounded-xl border-border/50 hover:bg-white/5 hover:border-purple-500/50 transition-all duration-300 ease-out"
               asChild
             >
               <Link to="/team">
@@ -127,18 +127,18 @@ const Index = () => {
           </div>
 
           {/* Quick Stats */}
-          <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-10">
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-gradient-primary">50+</div>
-              <div className="text-sm text-muted-foreground mt-1">Active Members</div>
+              <div className="text-2xl sm:text-3xl font-bold text-gradient-primary">50+</div>
+              <div className="text-xs text-muted-foreground mt-1">Active Members</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-gradient-cyan">10+</div>
-              <div className="text-sm text-muted-foreground mt-1">Events Hosted</div>
+              <div className="text-2xl sm:text-3xl font-bold text-gradient-cyan">10+</div>
+              <div className="text-xs text-muted-foreground mt-1">Events Hosted</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-gradient-primary">5+</div>
-              <div className="text-sm text-muted-foreground mt-1">Projects</div>
+              <div className="text-2xl sm:text-3xl font-bold text-gradient-primary">5+</div>
+              <div className="text-xs text-muted-foreground mt-1">Projects</div>
             </div>
           </div>
         </div>
@@ -152,15 +152,13 @@ const Index = () => {
       </section>
 
       {/* What We Do Section */}
-      <section className="section-padding relative overflow-hidden">
-        <div className="section-divider" />
-        
+      <section className="section-padding relative overflow-hidden -mt-16">
         <ParallaxSection className="container mx-auto container-padding">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
               <span className="text-gradient-primary">What We Do</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto">
               Empowering students through technology, community, and hands-on learning experiences.
             </p>
           </div>
@@ -209,16 +207,16 @@ const Index = () => {
       </section>
 
       {/* Features Highlight */}
-      <section className="section-padding relative overflow-hidden">
+      <section className="section-padding-sm relative overflow-hidden">
         <div className="absolute inset-0 hero-gradient opacity-50" />
         
         <ParallaxSection className="container mx-auto container-padding relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                 Why Join <span className="text-gradient-cyan">NeoFolks?</span>
               </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-base text-muted-foreground mb-6 leading-relaxed">
                 Be part of a vibrant community that's shaping the future of technology at our university. 
                 Connect with like-minded individuals and unlock your potential.
               </p>
@@ -264,25 +262,23 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding relative overflow-hidden">
-        <div className="section-divider" />
-        
+      <section className="section-padding-sm relative overflow-hidden">
         <ParallaxSection className="container mx-auto container-padding">
-          <div className="glass-card p-8 sm:p-12 rounded-3xl text-center relative overflow-hidden">
+          <div className="glass-card p-6 sm:p-10 rounded-2xl text-center relative overflow-hidden">
             {/* Background glow */}
             <div className="absolute inset-0 opacity-30 pointer-events-none">
-              <div className="absolute top-0 left-1/4 w-64 h-64 bg-purple-500 rounded-full blur-[100px] float-element" />
-              <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-cyan-500 rounded-full blur-[100px] float-element-delayed" />
+              <div className="absolute top-0 left-1/4 w-48 h-48 bg-purple-500 rounded-full blur-[80px] float-element" />
+              <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-cyan-500 rounded-full blur-[80px] float-element-delayed" />
             </div>
             
             <div className="relative z-10">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
                 Ready to <span className="text-gradient-cyan">Transform</span> Your Journey?
               </h2>
-              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              <p className="text-base text-muted-foreground mb-6 max-w-2xl mx-auto">
                 Join the NeoFolks community and be part of something extraordinary.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button 
                   className="btn-premium text-white px-8 py-6 text-lg font-medium rounded-xl group"
                   asChild

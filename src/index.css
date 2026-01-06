@@ -333,11 +333,11 @@
     transform: translateY(-2px);
   }
 
-  /* Section Divider */
+  /* Section Divider - Compact */
   .section-divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, hsl(270, 60%, 30%), hsl(220, 70%, 30%), transparent);
-    margin: 4rem 0;
+    margin: 0;
   }
 
   /* Glow text effect */
@@ -424,8 +424,19 @@
     @apply px-4 sm:px-6 lg:px-8;
   }
 
+  /* Optimized section spacing - compact but breathable */
   .section-padding {
-    @apply py-16 sm:py-20 lg:py-28;
+    @apply py-12 sm:py-14 lg:py-16;
+  }
+
+  /* Tighter spacing for consecutive sections */
+  .section-padding-sm {
+    @apply py-8 sm:py-10 lg:py-12;
+  }
+
+  /* Page header spacing (after nav) */
+  .page-header-padding {
+    @apply pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-14;
   }
 
   .text-gradient-primary {

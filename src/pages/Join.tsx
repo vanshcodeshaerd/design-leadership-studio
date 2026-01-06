@@ -28,22 +28,22 @@ const Join = () => {
     {
       icon: Code,
       title: "Skill Development",
-      description: "Access to workshops, coding sessions, and technical training programs"
+      description: "Access to workshops and technical training"
     },
     {
       icon: Users,
       title: "Community Network",
-      description: "Connect with like-minded students and industry professionals"
+      description: "Connect with like-minded students"
     },
     {
       icon: Calendar,
       title: "Exclusive Events",
-      description: "Priority access to hackathons, seminars, and tech talks"
+      description: "Priority access to hackathons & talks"
     },
     {
       icon: Award,
-      title: "Recognition & Growth",
-      description: "Leadership opportunities and skill recognition programs"
+      title: "Recognition",
+      description: "Leadership opportunities & growth"
     }
   ];
 
@@ -104,7 +104,6 @@ const Join = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000));
       
       toast({
@@ -112,7 +111,6 @@ const Join = () => {
         description: "Thank you for your interest in joining Neofolks. We'll review your application and get back to you soon.",
       });
 
-      // Reset form
       setFormData({
         fullName: "",
         email: "",
@@ -138,12 +136,12 @@ const Join = () => {
   return (
     <div className="min-h-screen">
       {/* Page Header */}
-      <section className="section-padding bg-gradient-glow/10">
+      <section className="page-header-padding">
         <div className="container mx-auto container-padding text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-gradient-primary">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-gradient-primary">
             Join Neofolks
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Ready to be part of NUV's most vibrant tech community? Join us and embark on an 
             exciting journey of learning, innovation, and collaboration.
           </p>
@@ -151,19 +149,19 @@ const Join = () => {
       </section>
 
       {/* Membership Benefits */}
-      <section className="section-padding">
+      <section className="section-padding-sm">
         <div className="container mx-auto container-padding">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gradient-primary">
+          <h2 className="text-2xl font-bold text-center mb-8 text-gradient-primary">
             Why Join Neofolks?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
             {benefits.map((benefit, index) => (
-              <div key={index} className="glass-card glass-card-hover rounded-xl p-6 text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-4">
-                  <benefit.icon className="h-8 w-8 text-white" />
+              <div key={index} className="glass-card glass-card-hover rounded-xl p-4 text-center">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-primary mb-3">
+                  <benefit.icon className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <h3 className="text-base font-semibold mb-1">{benefit.title}</h3>
+                <p className="text-muted-foreground text-xs leading-relaxed">
                   {benefit.description}
                 </p>
               </div>
@@ -173,28 +171,28 @@ const Join = () => {
       </section>
 
       {/* Membership Form */}
-      <section className="section-padding bg-card/20">
+      <section className="section-padding-sm bg-card/20">
         <div className="container mx-auto container-padding">
-          <div className="max-w-3xl mx-auto">
-            <div className="glass-card rounded-2xl p-8 sm:p-12">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-4">Membership Application</h2>
-                <p className="text-muted-foreground">
+          <div className="max-w-2xl mx-auto">
+            <div className="glass-card rounded-2xl p-6 sm:p-8">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-bold mb-2">Membership Application</h2>
+                <p className="text-muted-foreground text-sm">
                   Fill out this form to become a member of the Neofolks community at NUV.
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Personal Information */}
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold flex items-center gap-2">
-                    <span className="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-primary text-white text-sm">1</span>
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold flex items-center gap-2">
+                    <span className="flex items-center justify-center w-5 h-5 rounded-full bg-gradient-primary text-white text-xs">1</span>
                     Personal Information
                   </h3>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div>
-                      <Label htmlFor="fullName">Full Name *</Label>
+                      <Label htmlFor="fullName" className="text-sm">Full Name *</Label>
                       <Input
                         id="fullName"
                         name="fullName"
@@ -203,11 +201,11 @@ const Join = () => {
                         onChange={handleInputChange}
                         placeholder="Your full name"
                         required
-                        className="bg-background/50"
+                        className="bg-background/50 h-9"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="email">Email Address *</Label>
+                      <Label htmlFor="email" className="text-sm">Email Address *</Label>
                       <Input
                         id="email"
                         name="email"
@@ -216,13 +214,13 @@ const Join = () => {
                         onChange={handleInputChange}
                         placeholder="your.email@example.com"
                         required
-                        className="bg-background/50"
+                        className="bg-background/50 h-9"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <Label htmlFor="phone">Phone Number</Label>
+                    <Label htmlFor="phone" className="text-sm">Phone Number</Label>
                     <Input
                       id="phone"
                       name="phone"
@@ -230,23 +228,23 @@ const Join = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="+91 12345 67890"
-                      className="bg-background/50"
+                      className="bg-background/50 h-9"
                     />
                   </div>
                 </div>
 
                 {/* Academic Information */}
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold flex items-center gap-2">
-                    <span className="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-primary text-white text-sm">2</span>
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold flex items-center gap-2">
+                    <span className="flex items-center justify-center w-5 h-5 rounded-full bg-gradient-primary text-white text-xs">2</span>
                     Academic Information
                   </h3>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div>
-                      <Label htmlFor="course">Course/Program *</Label>
+                      <Label htmlFor="course" className="text-sm">Course/Program *</Label>
                       <Select value={formData.course} onValueChange={(value) => handleSelectChange("course", value)}>
-                        <SelectTrigger className="bg-background/50">
+                        <SelectTrigger className="bg-background/50 h-9">
                           <SelectValue placeholder="Select your course" />
                         </SelectTrigger>
                         <SelectContent>
@@ -261,9 +259,9 @@ const Join = () => {
                       </Select>
                     </div>
                     <div>
-                      <Label htmlFor="year">Current Year *</Label>
+                      <Label htmlFor="year" className="text-sm">Current Year *</Label>
                       <Select value={formData.year} onValueChange={(value) => handleSelectChange("year", value)}>
-                        <SelectTrigger className="bg-background/50">
+                        <SelectTrigger className="bg-background/50 h-9">
                           <SelectValue placeholder="Select your year" />
                         </SelectTrigger>
                         <SelectContent>
@@ -279,21 +277,22 @@ const Join = () => {
                 </div>
 
                 {/* Technical Interests */}
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold flex items-center gap-2">
-                    <span className="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-primary text-white text-sm">3</span>
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold flex items-center gap-2">
+                    <span className="flex items-center justify-center w-5 h-5 rounded-full bg-gradient-primary text-white text-xs">3</span>
                     Technical Interests
                   </h3>
                   
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                     {interestAreas.map((interest) => (
                       <div key={interest} className="flex items-center space-x-2">
                         <Checkbox
                           id={interest}
                           checked={formData.interests.includes(interest)}
                           onCheckedChange={() => handleInterestToggle(interest)}
+                          className="h-4 w-4"
                         />
-                        <Label htmlFor={interest} className="text-sm cursor-pointer">
+                        <Label htmlFor={interest} className="text-xs cursor-pointer">
                           {interest}
                         </Label>
                       </div>
@@ -302,48 +301,49 @@ const Join = () => {
                 </div>
 
                 {/* Experience & Motivation */}
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold flex items-center gap-2">
-                    <span className="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-primary text-white text-sm">4</span>
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold flex items-center gap-2">
+                    <span className="flex items-center justify-center w-5 h-5 rounded-full bg-gradient-primary text-white text-xs">4</span>
                     Tell Us About Yourself
                   </h3>
                   
                   <div>
-                    <Label htmlFor="experience">Previous Technical Experience</Label>
+                    <Label htmlFor="experience" className="text-sm">Previous Technical Experience</Label>
                     <Textarea
                       id="experience"
                       name="experience"
                       value={formData.experience}
                       onChange={handleInputChange}
-                      placeholder="Tell us about any programming languages you know, projects you've worked on, or technical skills you have..."
-                      rows={4}
-                      className="bg-background/50"
+                      placeholder="Programming languages, projects, technical skills..."
+                      rows={3}
+                      className="bg-background/50 text-sm"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="motivation">Why do you want to join Neofolks? *</Label>
+                    <Label htmlFor="motivation" className="text-sm">Why do you want to join Neofolks? *</Label>
                     <Textarea
                       id="motivation"
                       name="motivation"
                       value={formData.motivation}
                       onChange={handleInputChange}
-                      placeholder="What motivates you to join our tech community? What do you hope to achieve or contribute?"
-                      rows={4}
-                      className="bg-background/50"
+                      placeholder="What motivates you to join our tech community?"
+                      rows={3}
+                      className="bg-background/50 text-sm"
                       required
                     />
                   </div>
                 </div>
 
                 {/* Terms and Conditions */}
-                <div className="flex items-start space-x-3">
+                <div className="flex items-start space-x-2">
                   <Checkbox
                     id="terms"
                     checked={formData.agreeToTerms}
                     onCheckedChange={(checked) => setFormData(prev => ({ ...prev, agreeToTerms: checked as boolean }))}
+                    className="h-4 w-4 mt-0.5"
                   />
-                  <Label htmlFor="terms" className="text-sm leading-relaxed cursor-pointer">
+                  <Label htmlFor="terms" className="text-xs leading-relaxed cursor-pointer">
                     I agree to the terms and conditions of Neofolks membership and commit to 
                     active participation in community activities and events.
                   </Label>
@@ -353,19 +353,19 @@ const Join = () => {
                 <Button
                   type="submit"
                   variant="hero"
-                  size="lg"
+                  size="default"
                   disabled={isSubmitting}
                   className="w-full"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin mr-2" />
-                      Submitting Application...
+                      <div className="w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin mr-2" />
+                      Submitting...
                     </>
                   ) : (
                     <>
                       Submit Application
-                      <ChevronRight className="ml-2 h-5 w-5" />
+                      <ChevronRight className="ml-2 h-4 w-4" />
                     </>
                   )}
                 </Button>
@@ -376,38 +376,38 @@ const Join = () => {
       </section>
 
       {/* Next Steps */}
-      <section className="section-padding">
+      <section className="section-padding-sm">
         <div className="container mx-auto container-padding">
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-8">What Happens Next?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6">What Happens Next?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-primary text-white font-bold text-lg mb-4">
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-primary text-white font-bold text-sm mb-3">
                   1
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Application Review</h3>
-                <p className="text-muted-foreground text-sm">
-                  Our team will review your application within 3-5 business days
+                <h3 className="text-base font-semibold mb-1">Application Review</h3>
+                <p className="text-muted-foreground text-xs">
+                  We'll review within 3-5 business days
                 </p>
               </div>
               
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-primary text-white font-bold text-lg mb-4">
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-primary text-white font-bold text-sm mb-3">
                   2
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Welcome Interview</h3>
-                <p className="text-muted-foreground text-sm">
-                  Brief informal chat to get to know you and answer any questions
+                <h3 className="text-base font-semibold mb-1">Welcome Interview</h3>
+                <p className="text-muted-foreground text-xs">
+                  Brief informal chat to get to know you
                 </p>
               </div>
               
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-primary text-white font-bold text-lg mb-4">
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-primary text-white font-bold text-sm mb-3">
                   3
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Community Onboarding</h3>
-                <p className="text-muted-foreground text-sm">
-                  Join our orientation session and start your Neofolks journey!
+                <h3 className="text-base font-semibold mb-1">Community Onboarding</h3>
+                <p className="text-muted-foreground text-xs">
+                  Join orientation and start your journey!
                 </p>
               </div>
             </div>
