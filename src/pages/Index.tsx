@@ -3,12 +3,8 @@ import { ArrowRight, Users, Calendar, Lightbulb, MessageSquare, Sparkles, Code, 
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 import ParallaxSection from "@/components/ParallaxSection";
-import { useParallax } from "@/hooks/useParallax";
 
 const Index = () => {
-  const { offset: heroOffset } = useParallax({ speed: 0.4, direction: 'up' });
-  const { offset: shapesOffset } = useParallax({ speed: 0.2, direction: 'down' });
-
   // Geometric shapes data for animations
   const geometricShapes = [
     { id: 1, type: "diamond", top: "15%", left: "10%", delay: "0s" },
@@ -27,42 +23,38 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section - Neofolks Design */}
       <section className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
-        {/* Background Effects with Parallax */}
-        <div 
-          className="absolute inset-0 hero-gradient"
-          style={{ transform: `translateY(${heroOffset * 0.5}px)` }}
-        />
+        {/* Background Effects - CSS animated */}
+        <div className="absolute inset-0 hero-gradient" />
         
-        {/* Animated gradient orbs */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* Animated gradient orbs - pure CSS */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div 
-            className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full blur-[120px] opacity-30"
+            className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full blur-[120px] float-element"
             style={{ 
               background: 'radial-gradient(circle, hsl(270, 60%, 50%) 0%, transparent 70%)',
-              transform: `translateY(${heroOffset * 0.3}px)`,
+              animation: 'orb-float 12s cubic-bezier(0.4, 0, 0.2, 1) infinite',
             }}
           />
           <div 
-            className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full blur-[100px] opacity-25"
+            className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full blur-[100px] float-element-delayed"
             style={{ 
               background: 'radial-gradient(circle, hsl(220, 70%, 45%) 0%, transparent 70%)',
-              transform: `translateY(${heroOffset * 0.4}px)`,
+              animation: 'orb-float 14s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+              animationDelay: '-4s',
             }}
           />
           <div 
-            className="absolute top-1/2 right-1/3 w-[300px] h-[300px] rounded-full blur-[80px] opacity-20"
+            className="absolute top-1/2 right-1/3 w-[300px] h-[300px] rounded-full blur-[80px] float-element-slow"
             style={{ 
               background: 'radial-gradient(circle, hsl(180, 70%, 45%) 0%, transparent 70%)',
-              transform: `translateY(${heroOffset * 0.2}px)`,
+              animation: 'orb-float 16s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+              animationDelay: '-8s',
             }}
           />
         </div>
 
-        {/* Geometric Shapes with Parallax */}
-        <div 
-          className="absolute inset-0 pointer-events-none"
-          style={{ transform: `translateY(${shapesOffset}px)` }}
-        >
+        {/* Geometric Shapes - CSS animated */}
+        <div className="absolute inset-0 pointer-events-none">
           {geometricShapes.map((shape) => (
             <div
               key={shape.id}
@@ -120,12 +112,12 @@ const Index = () => {
             >
               <Link to="/about">
                 Discover More
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 ease-out group-hover:translate-x-1" />
               </Link>
             </Button>
             <Button 
               variant="outline"
-              className="px-8 py-6 text-lg font-medium rounded-xl border-border/50 hover:bg-white/5 hover:border-purple-500/50 transition-all"
+              className="px-8 py-6 text-lg font-medium rounded-xl border-border/50 hover:bg-white/5 hover:border-purple-500/50 transition-all duration-300 ease-out"
               asChild
             >
               <Link to="/team">
@@ -163,7 +155,7 @@ const Index = () => {
       <section className="section-padding relative overflow-hidden">
         <div className="section-divider" />
         
-        <ParallaxSection speed={0.15} className="container mx-auto container-padding">
+        <ParallaxSection className="container mx-auto container-padding">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               <span className="text-gradient-primary">What We Do</span>
@@ -202,10 +194,10 @@ const Index = () => {
             ].map((item, index) => (
               <ParallaxSection 
                 key={index} 
-                speed={0.1} 
+                delay={index * 100}
                 className="glass-card p-6 rounded-2xl group"
               >
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 ease-out`}>
                   <item.icon className="h-7 w-7 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-foreground">{item.title}</h3>
@@ -220,7 +212,7 @@ const Index = () => {
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 hero-gradient opacity-50" />
         
-        <ParallaxSection speed={0.2} className="container mx-auto container-padding relative z-10">
+        <ParallaxSection className="container mx-auto container-padding relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl sm:text-5xl font-bold mb-6">
@@ -239,7 +231,7 @@ const Index = () => {
                   { icon: MessageSquare, text: "Collaborative learning environment" }
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-4 group">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-cyan-500/20 flex items-center justify-center group-hover:from-purple-500/30 group-hover:to-cyan-500/30 transition-all">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-cyan-500/20 flex items-center justify-center group-hover:from-purple-500/30 group-hover:to-cyan-500/30 transition-all duration-300 ease-out">
                       <item.icon className="h-5 w-5 text-purple-400" />
                     </div>
                     <span className="text-foreground/90">{item.text}</span>
@@ -261,7 +253,7 @@ const Index = () => {
                   >
                     <Link to="/join">
                       Get Started
-                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 ease-out group-hover:translate-x-1" />
                     </Link>
                   </Button>
                 </div>
@@ -275,12 +267,12 @@ const Index = () => {
       <section className="section-padding relative overflow-hidden">
         <div className="section-divider" />
         
-        <ParallaxSection speed={0.15} className="container mx-auto container-padding">
+        <ParallaxSection className="container mx-auto container-padding">
           <div className="glass-card p-8 sm:p-12 rounded-3xl text-center relative overflow-hidden">
             {/* Background glow */}
-            <div className="absolute inset-0 opacity-30">
-              <div className="absolute top-0 left-1/4 w-64 h-64 bg-purple-500 rounded-full blur-[100px]" />
-              <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-cyan-500 rounded-full blur-[100px]" />
+            <div className="absolute inset-0 opacity-30 pointer-events-none">
+              <div className="absolute top-0 left-1/4 w-64 h-64 bg-purple-500 rounded-full blur-[100px] float-element" />
+              <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-cyan-500 rounded-full blur-[100px] float-element-delayed" />
             </div>
             
             <div className="relative z-10">
@@ -297,12 +289,12 @@ const Index = () => {
                 >
                   <Link to="/join">
                     Join the Community
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 ease-out group-hover:translate-x-1" />
                   </Link>
                 </Button>
                 <Button 
                   variant="outline"
-                  className="px-8 py-6 text-lg font-medium rounded-xl border-border/50 hover:bg-white/5 hover:border-cyan-500/50 transition-all"
+                  className="px-8 py-6 text-lg font-medium rounded-xl border-border/50 hover:bg-white/5 hover:border-cyan-500/50 transition-all duration-300 ease-out"
                   asChild
                 >
                   <Link to="/events">
