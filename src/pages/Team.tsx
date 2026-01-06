@@ -3,6 +3,7 @@ import { Mail, Linkedin, Github, Code, Palette, MessageSquare, FileText, Setting
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import Footer from "@/components/Footer";
+import ParallaxSection from "@/components/ParallaxSection";
 
 interface TeamMember {
   id: string;
@@ -27,9 +28,9 @@ const Team = () => {
       id: "vansh-shah",
       name: "Vansh Shah",
       role: "Tech Lead",
-      shortBio: "Driving technical innovation at Neofolks by managing the website, digital platforms, and coordinating with the team to ensure seamless event planning and reliable digital operations.",
+      shortBio: "Driving technical innovation at Neofolks by managing the website, digital platforms, and coordinating with the team.",
       fullBio:
-        "Vansh manages the technical infrastructure of Neofolks, including the official website and digital platforms. He works closely with the entire team to keep event planning organized and structured. By contributing technical insights and supporting coordination, he ensures smooth execution and reliable digital operations.",
+        "Vansh manages the technical infrastructure of Neofolks, including the official website and digital platforms. He works closely with the entire team to keep event planning organized and structured.",
       responsibilities: [
         "Website Management",
         "Technical Planning",
@@ -48,9 +49,9 @@ const Team = () => {
       id: "rishi-kacchadia",
       name: "Rishi Kacchadia",
       role: "Marketing & Outreach Lead",
-      shortBio: "Building strategic partnerships, managing sponsorships, and overseeing financial planning to ensure sustainable growth and strong external relationships for Neofolks.",
+      shortBio: "Building strategic partnerships, managing sponsorships, and overseeing financial planning for sustainable growth.",
       fullBio:
-        "Rishi leads marketing, outreach, and financial coordination for Neofolks. He manages collaborations with other clubs, handles sponsorships and funding, and oversees budgets and expenses. His role ensures strong external relationships and sustainable planning for all Neofolks initiatives.",
+        "Rishi leads marketing, outreach, and financial coordination for Neofolks. He manages collaborations with other clubs, handles sponsorships and funding, and oversees budgets.",
       responsibilities: [
         "Marketing Strategy",
         "Outreach & Collaborations",
@@ -64,9 +65,9 @@ const Team = () => {
       id: "zeeshan-vahora",
       name: "Zeeshan Vahora",
       role: "Event Operations Lead",
-      shortBio: "Ensuring flawless event execution by managing logistics, venue coordination, and real-time operations. His expertise in handling timelines and resources makes every Neofolks event a success.",
+      shortBio: "Ensuring flawless event execution through logistics, venue coordination, and real-time operations management.",
       fullBio:
-        "Zeeshan oversees all on-ground operations during Neofolks events. He manages logistics, venue arrangements, and real-time coordination to ensure everything runs smoothly. His ability to handle timelines, teams, and resources makes him essential to successful event execution.",
+        "Zeeshan oversees all on-ground operations during Neofolks events. He manages logistics, venue arrangements, and real-time coordination to ensure everything runs smoothly.",
       responsibilities: [
         "Event Execution",
         "Logistics Management",
@@ -80,9 +81,9 @@ const Team = () => {
       id: "siona-venuthurumilli",
       name: "Siona Venuthurumilli",
       role: "Social Media Lead",
-      shortBio: "Crafting Neofolks' digital presence across Instagram and LinkedIn through creative reels, stories, and posts that reflect our brand identity and drive strong audience engagement.",
+      shortBio: "Crafting Neofolks' digital presence through creative reels, stories, and posts across all platforms.",
       fullBio:
-        "Siona manages Neofolks' social media presence across platforms such as Instagram and LinkedIn. She plans, creates, and executes reels, stories, and posts that reflect the brand's identity and values. By combining creativity with consistency, she ensures strong audience engagement and a recognizable digital presence for Neofolks.",
+        "Siona manages Neofolks' social media presence across platforms such as Instagram and LinkedIn. She plans, creates, and executes content that reflects the brand's identity.",
       responsibilities: [
         "Social Media Strategy",
         "Reel & Story Creation",
@@ -96,9 +97,9 @@ const Team = () => {
       id: "dhyey-chatrala",
       name: "Dhyey Chatrala",
       role: "Design Lead",
-      shortBio: "Shaping Neofolks' visual identity through event posters, social media creatives, certificates, and décor. His attention to detail ensures aesthetic consistency across all platforms.",
+      shortBio: "Shaping Neofolks' visual identity through event posters, social media creatives, and brand consistency.",
       fullBio:
-        "Dhyey oversees the complete visual identity of Neofolks. He designs event posters, social media creatives, certificates, mementos, and décor elements. Through thoughtful design and attention to detail, he ensures visual consistency across all platforms and events, enhancing the overall brand experience.",
+        "Dhyey oversees the complete visual identity of Neofolks. He designs event posters, social media creatives, certificates, and décor elements.",
       responsibilities: [
         "Graphic Design",
         "Visual Branding",
@@ -112,9 +113,9 @@ const Team = () => {
       id: "dhvani-gohel",
       name: "Dhvani Gohel",
       role: "Content Lead",
-      shortBio: "Crafting all written communication for Neofolks with clarity and professionalism—from promotional content and emails to social media captions that strengthen our brand voice.",
+      shortBio: "Crafting all written communication with clarity and professionalism to strengthen the brand voice.",
       fullBio:
-        "Dhvani handles all written communication for Neofolks, ensuring clarity, professionalism, and consistency. She writes promotional content, emails, social media captions, and formal documents required for events. Her work helps communicate ideas effectively and strengthens Neofolks' voice across audiences.",
+        "Dhvani handles all written communication for Neofolks, ensuring clarity, professionalism, and consistency across all content.",
       responsibilities: [
         "Content Writing",
         "Promotional Messaging",
@@ -129,42 +130,46 @@ const Team = () => {
   return (
     <div className="min-h-screen">
       {/* Page Header */}
-      <section className="page-header-padding">
-        <div className="container mx-auto container-padding text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-gradient-primary">Our Team</h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Meet the passionate leaders driving innovation and fostering community growth at Neofolks. Our team is
-            committed to creating an inclusive environment where technology meets creativity.
-          </p>
+      <section className="page-header-padding relative overflow-hidden">
+        <div className="absolute inset-0 hero-gradient opacity-50" />
+        <div className="container mx-auto container-padding text-center relative z-10">
+          <ParallaxSection>
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">The People</p>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gradient-hero">Our Team</h1>
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+              Meet the passionate leaders driving innovation and fostering community growth at Neofolks.
+            </p>
+          </ParallaxSection>
         </div>
       </section>
 
       {/* Team Grid */}
       <section className="section-padding-sm">
         <div className="container mx-auto container-padding">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {teamMembers.map((member) => (
-              <div
-                key={member.id}
-                className="glass-card glass-card-hover rounded-xl p-6 text-center cursor-pointer group"
-                onClick={() => setSelectedMember(member)}
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-4 group-hover:scale-110 transition-all duration-300">
-                  <member.icon className="h-8 w-8 text-white" />
-                </div>
-
-                <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
-                <p className="text-accent text-sm mb-3 font-medium">{member.role}</p>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">{member.shortBio}</p>
-
-                <Button
-                  variant="leadership"
-                  size="sm"
-                  className="w-full group-hover:scale-105 transition-transform duration-300"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {teamMembers.map((member, index) => (
+              <ParallaxSection key={member.id} delay={index * 80}>
+                <div
+                  className="feature-card text-center cursor-pointer group"
+                  onClick={() => setSelectedMember(member)}
                 >
-                  View Details
-                </Button>
-              </div>
+                  <div className="w-14 h-14 rounded-xl icon-gradient mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <member.icon className="h-7 w-7 text-white" />
+                  </div>
+
+                  <h3 className="text-base font-semibold mb-1">{member.name}</h3>
+                  <p className="text-xs text-gradient-cyan font-medium mb-2">{member.role}</p>
+                  <p className="text-muted-foreground text-xs leading-relaxed mb-4 line-clamp-2">{member.shortBio}</p>
+
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="text-xs btn-outline-glow"
+                  >
+                    View Details
+                  </Button>
+                </div>
+              </ParallaxSection>
             ))}
           </div>
         </div>
@@ -172,58 +177,61 @@ const Team = () => {
 
       {/* Team Member Detail Modal */}
       <Dialog open={selectedMember !== null} onOpenChange={() => setSelectedMember(null)}>
-        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+        <DialogContent className="max-w-lg max-h-[80vh] overflow-y-auto bg-card border-border">
           {selectedMember && (
             <>
               <DialogHeader>
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-primary">
-                    <selectedMember.icon className="h-7 w-7 text-white" />
+                  <div className="w-12 h-12 rounded-xl icon-gradient flex items-center justify-center">
+                    <selectedMember.icon className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <DialogTitle className="text-xl">{selectedMember.name}</DialogTitle>
-                    <p className="text-accent font-medium text-sm">{selectedMember.role}</p>
+                    <DialogTitle className="text-lg">{selectedMember.name}</DialogTitle>
+                    <p className="text-xs text-gradient-cyan font-medium">{selectedMember.role}</p>
                   </div>
                 </div>
               </DialogHeader>
 
-              <div className="space-y-5">
-                {/* Full Bio */}
+              <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2 text-sm">About</h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{selectedMember.fullBio}</p>
+                  <h4 className="font-semibold mb-2 text-xs uppercase tracking-wide text-muted-foreground">About</h4>
+                  <p className="text-sm leading-relaxed">{selectedMember.fullBio}</p>
                 </div>
 
-                {/* Responsibilities */}
                 <div>
-                  <h4 className="font-semibold mb-2 text-sm">Key Responsibilities</h4>
-                  <div className="grid grid-cols-2 gap-2">
+                  <h4 className="font-semibold mb-2 text-xs uppercase tracking-wide text-muted-foreground">Responsibilities</h4>
+                  <div className="flex flex-wrap gap-1.5">
                     {selectedMember.responsibilities.map((responsibility, index) => (
-                      <div key={index} className="bg-muted/30 rounded-lg px-3 py-2 text-xs">
+                      <span key={index} className="bg-violet-500/10 border border-violet-500/20 rounded-md px-2 py-1 text-xs">
                         {responsibility}
-                      </div>
+                      </span>
                     ))}
                   </div>
                 </div>
 
-                {/* Contact */}
                 {selectedMember.contact && (
                   <div>
-                    <h4 className="font-semibold mb-2 text-sm">Connect</h4>
+                    <h4 className="font-semibold mb-2 text-xs uppercase tracking-wide text-muted-foreground">Connect</h4>
                     <div className="flex gap-2">
                       {selectedMember.contact.email && (
-                        <Button variant="ghost" size="icon" className="h-9 w-9">
-                          <Mail className="h-4 w-4" />
+                        <Button variant="ghost" size="icon" className="h-8 w-8 hover:text-violet-400" asChild>
+                          <a href={`mailto:${selectedMember.contact.email}`}>
+                            <Mail className="h-4 w-4" />
+                          </a>
                         </Button>
                       )}
                       {selectedMember.contact.linkedin && (
-                        <Button variant="ghost" size="icon" className="h-9 w-9">
-                          <Linkedin className="h-4 w-4" />
+                        <Button variant="ghost" size="icon" className="h-8 w-8 hover:text-violet-400" asChild>
+                          <a href={`https://${selectedMember.contact.linkedin}`} target="_blank" rel="noopener noreferrer">
+                            <Linkedin className="h-4 w-4" />
+                          </a>
                         </Button>
                       )}
                       {selectedMember.contact.github && (
-                        <Button variant="ghost" size="icon" className="h-9 w-9">
-                          <Github className="h-4 w-4" />
+                        <Button variant="ghost" size="icon" className="h-8 w-8 hover:text-violet-400" asChild>
+                          <a href={`https://${selectedMember.contact.github}`} target="_blank" rel="noopener noreferrer">
+                            <Github className="h-4 w-4" />
+                          </a>
                         </Button>
                       )}
                     </div>

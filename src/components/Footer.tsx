@@ -1,48 +1,53 @@
-import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUp, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <footer className="bg-card/50 border-t border-border">
+    <footer className="bg-card/30 border-t border-border/50">
       <div className="container mx-auto container-padding">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-10">
           {/* Brand & Description */}
           <div className="md:col-span-2">
-            <h3 className="text-xl font-semibold mb-4 text-gradient-primary">
-              Neofolks - Tech Community NUV
-            </h3>
-            <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
-              Neofolks is the premier technology and community group at Navrachana University, 
-              dedicated to fostering innovation, creativity, and collaboration among students 
-              passionate about technology and digital transformation.
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center">
+                <span className="text-white font-bold text-sm">N</span>
+              </div>
+              <span className="font-semibold text-gradient-primary">Neofolks</span>
+            </div>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-5 max-w-sm">
+              The premier tech community at Navrachana University, fostering innovation 
+              and collaboration among students passionate about technology.
             </p>
             
             {/* Social Links */}
-            <div className="flex gap-4">
-              <Button variant="ghost" size="icon" className="hover:text-accent-light" asChild>
+            <div className="flex gap-2">
+              <Button variant="ghost" size="icon" className="h-8 w-8 hover:text-violet-400 hover:bg-violet-500/10" asChild>
                 <a href="https://github.com/neofolks" target="_blank" rel="noopener noreferrer">
-                  <Github className="h-5 w-5" />
+                  <Github className="h-4 w-4" />
                   <span className="sr-only">GitHub</span>
                 </a>
               </Button>
-              <Button variant="ghost" size="icon" className="hover:text-accent-light" asChild>
+              <Button variant="ghost" size="icon" className="h-8 w-8 hover:text-violet-400 hover:bg-violet-500/10" asChild>
                 <a href="https://www.linkedin.com/company/neofolks" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-5 w-5" />
+                  <Linkedin className="h-4 w-4" />
                   <span className="sr-only">LinkedIn</span>
                 </a>
               </Button>
-              <Button variant="ghost" size="icon" className="hover:text-accent-light" asChild>
+              <Button variant="ghost" size="icon" className="h-8 w-8 hover:text-violet-400 hover:bg-violet-500/10" asChild>
+                <a href="https://www.instagram.com/neofolks/" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="h-4 w-4" />
+                  <span className="sr-only">Instagram</span>
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" className="h-8 w-8 hover:text-violet-400 hover:bg-violet-500/10" asChild>
                 <a href="mailto:neofolks@nuvstudents.edu">
-                  <Mail className="h-5 w-5" />
+                  <Mail className="h-4 w-4" />
                   <span className="sr-only">Email</span>
                 </a>
               </Button>
@@ -51,92 +56,71 @@ const Footer = () => {
 
           {/* Quick Navigation */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-sm mb-4">Quick Links</h4>
             <nav className="space-y-2">
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="block text-muted-foreground hover:text-accent transition-colors animated-underline"
-              >
-                About Neofolks
-              </button>
-              <button 
-                onClick={() => scrollToSection('team')}
-                className="block text-muted-foreground hover:text-accent transition-colors animated-underline"
-              >
-                Our Team
-              </button>
-              <button 
-                onClick={() => scrollToSection('projects')}
-                className="block text-muted-foreground hover:text-accent transition-colors animated-underline"
-              >
-                Community Projects
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="block text-muted-foreground hover:text-accent transition-colors animated-underline"
-              >
-                Connect With Us
-              </button>
+              {[
+                { to: "/about", label: "About Us" },
+                { to: "/team", label: "Our Team" },
+                { to: "/events", label: "Events" },
+                { to: "/contact", label: "Contact" }
+              ].map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="block text-xs text-muted-foreground hover:text-violet-400 transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-4">Connect With Us</h4>
-            <div className="space-y-2 text-muted-foreground">
-              <p>Navrachana University, Vadodara</p>
+            <h4 className="font-semibold text-sm mb-4">Connect</h4>
+            <div className="space-y-2 text-xs text-muted-foreground">
+              <p>Navrachana University</p>
+              <p>Vadodara, Gujarat</p>
               <a 
                 href="mailto:neofolks@nuvstudents.edu"
-                className="block hover:text-accent transition-colors animated-underline"
+                className="block hover:text-violet-400 transition-colors"
               >
                 neofolks@nuvstudents.edu
               </a>
-              <p className="text-sm">
-                Community response time: 48 hours
-              </p>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="text-sm text-muted-foreground">
-            © 2024 Neofolks - Tech Community at Navrachana University. Built with passion for innovation and learning.
+        <div className="border-t border-border/50 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <div className="text-xs text-muted-foreground">
+            © 2025 Neofolks. Built with passion for technology.
           </div>
           
-          <div className="flex items-center gap-4">
-            <a 
-              href="/privacy" 
-              className="text-sm text-muted-foreground hover:text-accent transition-colors"
+          <div className="flex items-center gap-3">
+            <Link 
+              to="/join" 
+              className="text-xs text-muted-foreground hover:text-violet-400 transition-colors"
             >
-              Privacy Policy
-            </a>
-            <span className="text-muted-foreground">•</span>
-            <a 
-              href="/terms" 
-              className="text-sm text-muted-foreground hover:text-accent transition-colors"
+              Join Us
+            </Link>
+            <span className="text-muted-foreground/50">•</span>
+            <Link 
+              to="/events" 
+              className="text-xs text-muted-foreground hover:text-violet-400 transition-colors"
             >
-              Terms of Service
-            </a>
+              Events
+            </Link>
             <Button 
               variant="ghost" 
               size="icon" 
               onClick={scrollToTop}
-              className="ml-4 hover:text-accent-light"
+              className="ml-2 h-7 w-7 hover:text-violet-400 hover:bg-violet-500/10"
               aria-label="Scroll to top"
             >
-              <ArrowUp className="h-4 w-4" />
+              <ArrowUp className="h-3 w-3" />
             </Button>
           </div>
-        </div>
-
-        {/* Performance & Accessibility Statement */}
-        <div className="text-center py-4 border-t border-border/50">
-          <p className="text-xs text-muted-foreground">
-            Official website of Neofolks Tech Community at Navrachana University • 
-            Built with modern web technologies and accessibility standards • 
-            Empowering students through technology education and innovation
-          </p>
         </div>
       </div>
     </footer>

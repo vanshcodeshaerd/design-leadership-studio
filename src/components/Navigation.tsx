@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -24,34 +34,38 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-xl border-b border-border/50 z-50">
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-background/90 backdrop-blur-xl border-b border-border/50' 
+        : 'bg-transparent'
+    }`}>
       <div className="container mx-auto container-padding">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14">
           {/* Logo - Hidden on home page */}
           <Link to="/" className="flex items-center space-x-2">
             {!isHomePage ? (
               <>
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-purple-500/20">
-                  <span className="text-white font-bold text-lg">N</span>
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-violet-500/20">
+                  <span className="text-white font-bold text-sm">N</span>
                 </div>
-                <span className="font-semibold text-lg hidden sm:block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                <span className="font-semibold text-sm hidden sm:block text-gradient-primary">
                   Neofolks
                 </span>
               </>
             ) : (
-              <div className="h-10" />
+              <div className="h-8" />
             )}
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-0.5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-200 ${
                   isActiveLink(link.href) 
-                    ? "text-white bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30" 
+                    ? "text-white bg-gradient-to-r from-violet-500/20 to-cyan-500/20 border border-violet-500/30" 
                     : "text-muted-foreground hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -64,28 +78,28 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden hover:bg-white/5"
+            className="md:hidden hover:bg-white/5 h-8 w-8"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className="h-5 w-5" />
+              <X className="h-4 w-4" />
             ) : (
-              <Menu className="h-5 w-5" />
+              <Menu className="h-4 w-4" />
             )}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border/50">
-            <div className="flex flex-col space-y-1">
+          <div className="md:hidden py-3 border-t border-border/50 bg-background/95 backdrop-blur-xl">
+            <div className="flex flex-col space-y-0.5">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`text-sm font-medium transition-all duration-200 px-4 py-3 rounded-lg ${
+                  className={`text-xs font-medium transition-all duration-200 px-3 py-2.5 rounded-lg ${
                     isActiveLink(link.href) 
-                      ? "text-white bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30" 
+                      ? "text-white bg-gradient-to-r from-violet-500/20 to-cyan-500/20 border border-violet-500/30" 
                       : "text-muted-foreground hover:text-white hover:bg-white/5"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
