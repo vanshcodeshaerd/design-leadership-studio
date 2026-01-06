@@ -161,7 +161,7 @@ const Index = () => {
             {techFocusAreas.map((tech, index) => <ParallaxSection key={index} delay={index * 50}>
                 <div className="tech-icon-card group cursor-default">
                   <tech.icon className="w-6 h-6 text-muted-foreground group-hover:text-violet-400 transition-colors duration-300" />
-                  <span className="text-[10px]">{tech.label}</span>
+                  <span className="text-[10px] whitespace-nowrap">{tech.label}</span>
                 </div>
               </ParallaxSection>)}
           </div>
