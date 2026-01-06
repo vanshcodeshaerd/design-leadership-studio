@@ -1,23 +1,21 @@
 import { Github, Linkedin, Mail, ArrowUp, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <footer className="bg-card/30 border-t border-border/50">
+  return <footer className="bg-card/30 border-t border-border/50">
       <div className="container mx-auto container-padding">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-10">
           {/* Brand & Description */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">N</span>
-              </div>
+              
               <span className="font-semibold text-gradient-primary">Neofolks</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-5 max-w-sm">
@@ -58,20 +56,21 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-sm mb-4">Quick Links</h4>
             <nav className="space-y-2">
-              {[
-                { to: "/about", label: "About Us" },
-                { to: "/team", label: "Our Team" },
-                { to: "/events", label: "Events" },
-                { to: "/contact", label: "Contact" }
-              ].map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className="block text-xs text-muted-foreground hover:text-violet-400 transition-colors"
-                >
+              {[{
+              to: "/about",
+              label: "About Us"
+            }, {
+              to: "/team",
+              label: "Our Team"
+            }, {
+              to: "/events",
+              label: "Events"
+            }, {
+              to: "/contact",
+              label: "Contact"
+            }].map(link => <Link key={link.to} to={link.to} className="block text-xs text-muted-foreground hover:text-violet-400 transition-colors">
                   {link.label}
-                </Link>
-              ))}
+                </Link>)}
             </nav>
           </div>
 
@@ -81,50 +80,31 @@ const Footer = () => {
             <div className="space-y-2 text-xs text-muted-foreground">
               <p>Navrachana University</p>
               <p>Vadodara, Gujarat</p>
-              <a 
-                href="mailto:neofolks@nuvstudents.edu"
-                className="block hover:text-violet-400 transition-colors"
-              >
-                neofolks@nuvstudents.edu
-              </a>
+              <a href="mailto:neofolks@nuvstudents.edu" className="block hover:text-violet-400 transition-colors">neofolks@nuv.ac.in
+
+            </a>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-border/50 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <div className="text-xs text-muted-foreground">
-            © 2025 Neofolks. Built with passion for technology.
-          </div>
+          <div className="text-xs text-muted-foreground">© 2026 Neofolks. Built with passion for technology.</div>
           
           <div className="flex items-center gap-3">
-            <Link 
-              to="/join" 
-              className="text-xs text-muted-foreground hover:text-violet-400 transition-colors"
-            >
+            <Link to="/join" className="text-xs text-muted-foreground hover:text-violet-400 transition-colors">
               Join Us
             </Link>
             <span className="text-muted-foreground/50">•</span>
-            <Link 
-              to="/events" 
-              className="text-xs text-muted-foreground hover:text-violet-400 transition-colors"
-            >
+            <Link to="/events" className="text-xs text-muted-foreground hover:text-violet-400 transition-colors">
               Events
             </Link>
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={scrollToTop}
-              className="ml-2 h-7 w-7 hover:text-violet-400 hover:bg-violet-500/10"
-              aria-label="Scroll to top"
-            >
+            <Button variant="ghost" size="icon" onClick={scrollToTop} className="ml-2 h-7 w-7 hover:text-violet-400 hover:bg-violet-500/10" aria-label="Scroll to top">
               <ArrowUp className="h-3 w-3" />
             </Button>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
