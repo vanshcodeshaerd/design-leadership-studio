@@ -158,12 +158,12 @@ const Events = () => {
   return (
     <div className="min-h-screen">
       {/* Page Header */}
-      <section className="section-padding bg-gradient-glow/10">
+      <section className="page-header-padding">
         <div className="container mx-auto container-padding text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-gradient-primary">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-gradient-primary">
             Events & Activities
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Join us for exciting workshops, seminars, hackathons, and community events. 
             From beginner-friendly sessions to advanced technical challenges, there's something for everyone.
           </p>
@@ -171,74 +171,70 @@ const Events = () => {
       </section>
 
       {/* Upcoming Events */}
-      <section className="section-padding">
+      <section className="section-padding-sm">
         <div className="container mx-auto container-padding">
-          <h2 className="text-3xl font-bold mb-8 text-gradient-primary">Upcoming Events</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          <h2 className="text-2xl font-bold mb-6 text-gradient-primary">Upcoming Events</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
             {upcomingEvents.map((event) => {
               const IconComponent = getEventIcon(event.type);
               return (
-                <div key={event.id} className="glass-card glass-card-hover rounded-xl p-6">
-                  <div className="flex items-start justify-between mb-4">
+                <div key={event.id} className="glass-card glass-card-hover rounded-xl p-5">
+                  <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-primary">
-                        <IconComponent className="h-6 w-6 text-white" />
+                      <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-primary">
+                        <IconComponent className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold">{event.title}</h3>
-                        <p className="text-sm text-muted-foreground">{event.type}</p>
+                        <h3 className="text-lg font-semibold">{event.title}</h3>
+                        <p className="text-xs text-muted-foreground">{event.type}</p>
                       </div>
                     </div>
-                    <Badge className={getStatusColor(event.status)}>
+                    <Badge className={`${getStatusColor(event.status)} text-xs`}>
                       {event.status}
                     </Badge>
                   </div>
 
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-muted-foreground text-sm mb-3 leading-relaxed line-clamp-2">
                     {event.description}
                   </p>
 
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center gap-2 text-sm">
-                      <Calendar className="h-4 w-4 text-accent" />
-                      <span>{formatDate(event.date)}</span>
+                  <div className="grid grid-cols-2 gap-2 mb-3 text-xs">
+                    <div className="flex items-center gap-1.5">
+                      <Calendar className="h-3.5 w-3.5 text-accent" />
+                      <span className="truncate">{formatDate(event.date).split(',')[1]}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-sm">
-                      <Clock className="h-4 w-4 text-accent" />
-                      <span>{event.time}</span>
+                    <div className="flex items-center gap-1.5">
+                      <Clock className="h-3.5 w-3.5 text-accent" />
+                      <span className="truncate">{event.time.split(' - ')[0]}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-sm">
-                      <MapPin className="h-4 w-4 text-accent" />
-                      <span>{event.location}</span>
+                    <div className="flex items-center gap-1.5">
+                      <MapPin className="h-3.5 w-3.5 text-accent" />
+                      <span className="truncate">{event.location}</span>
                     </div>
                     {event.maxAttendees && (
-                      <div className="flex items-center gap-2 text-sm">
-                        <Users className="h-4 w-4 text-accent" />
-                        <span>{event.attendees}/{event.maxAttendees} registered</span>
+                      <div className="flex items-center gap-1.5">
+                        <Users className="h-3.5 w-3.5 text-accent" />
+                        <span>{event.attendees}/{event.maxAttendees}</span>
                       </div>
                     )}
                   </div>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {event.tags.map((tag, index) => (
-                      <Badge key={index} variant="outline" className="text-xs">
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {event.tags.slice(0, 3).map((tag, index) => (
+                      <Badge key={index} variant="outline" className="text-xs py-0">
                         {tag}
                       </Badge>
                     ))}
                   </div>
 
                   {event.status === "Registration Open" && (
-                    <Button variant="hero" className="w-full" asChild>
-                      <a href="/join">
-                        Register Now
-                      </a>
+                    <Button variant="hero" size="sm" className="w-full" asChild>
+                      <a href="/join">Register Now</a>
                     </Button>
                   )}
                   {event.status === "Upcoming" && (
-                    <Button variant="leadership" className="w-full" asChild>
-                      <a href="/contact">
-                        Learn More
-                      </a>
+                    <Button variant="leadership" size="sm" className="w-full" asChild>
+                      <a href="/contact">Learn More</a>
                     </Button>
                   )}
                 </div>
@@ -249,47 +245,47 @@ const Events = () => {
       </section>
 
       {/* Event Categories */}
-      <section className="section-padding bg-card/20">
+      <section className="section-padding-sm bg-card/20">
         <div className="container mx-auto container-padding">
-          <h2 className="text-3xl font-bold text-center mb-12">Event Categories</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <h2 className="text-2xl font-bold text-center mb-8">Event Categories</h2>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-4">
-                <Code className="h-8 w-8 text-white" />
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-primary mb-3">
+                <Code className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Technical Workshops</h3>
-              <p className="text-muted-foreground text-sm">
-                Hands-on coding sessions covering various programming languages and frameworks
+              <h3 className="text-base font-semibold mb-1">Technical Workshops</h3>
+              <p className="text-muted-foreground text-xs">
+                Hands-on coding sessions
               </p>
             </div>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-4">
-                <Lightbulb className="h-8 w-8 text-white" />
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-primary mb-3">
+                <Lightbulb className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Industry Seminars</h3>
-              <p className="text-muted-foreground text-sm">
-                Expert talks on latest technology trends and career guidance sessions
+              <h3 className="text-base font-semibold mb-1">Industry Seminars</h3>
+              <p className="text-muted-foreground text-xs">
+                Expert talks & guidance
               </p>
             </div>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-4">
-                <Trophy className="h-8 w-8 text-white" />
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-primary mb-3">
+                <Trophy className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Competitions</h3>
-              <p className="text-muted-foreground text-sm">
-                Hackathons, coding contests, and project competitions with exciting prizes
+              <h3 className="text-base font-semibold mb-1">Competitions</h3>
+              <p className="text-muted-foreground text-xs">
+                Hackathons & contests
               </p>
             </div>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-4">
-                <Users className="h-8 w-8 text-white" />
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-primary mb-3">
+                <Users className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Community Events</h3>
-              <p className="text-muted-foreground text-sm">
-                Networking sessions, social gatherings, and collaborative learning experiences
+              <h3 className="text-base font-semibold mb-1">Community Events</h3>
+              <p className="text-muted-foreground text-xs">
+                Networking sessions
               </p>
             </div>
           </div>
@@ -297,43 +293,42 @@ const Events = () => {
       </section>
 
       {/* Past Events Gallery */}
-      <section className="section-padding">
+      <section className="section-padding-sm">
         <div className="container mx-auto container-padding">
-          <h2 className="text-3xl font-bold mb-8 text-gradient-primary text-center">Our Past Events</h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Take a look at some of our recent successful events that brought together our tech community 
-            for learning, innovation, and collaboration.
+          <h2 className="text-2xl font-bold mb-2 text-gradient-primary text-center">Our Past Events</h2>
+          <p className="text-center text-muted-foreground text-sm mb-8 max-w-2xl mx-auto">
+            Take a look at some of our recent successful events.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {pastEvents.map((event) => {
               const IconComponent = getEventIcon(event.type);
               return (
                 <div key={event.id} className="glass-card glass-card-hover rounded-xl overflow-hidden group">
                   {/* Event Image */}
-                  <div className="aspect-video relative overflow-hidden">
+                  <div className="aspect-[16/10] relative overflow-hidden">
                     <img 
                       src={event.image} 
                       alt={event.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-4 left-4">
-                      <Badge className="bg-black/70 text-white border-white/20">
-                        {formatDate(event.date)}
+                    <div className="absolute bottom-3 left-3">
+                      <Badge className="bg-black/70 text-white border-white/20 text-xs">
+                        {formatDate(event.date).split(',')[1]}
                       </Badge>
                     </div>
-                    <div className="absolute top-4 right-4">
-                      <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-black/70 backdrop-blur-sm">
-                        <IconComponent className="h-5 w-5 text-white" />
+                    <div className="absolute top-3 right-3">
+                      <div className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-black/70 backdrop-blur-sm">
+                        <IconComponent className="h-4 w-4 text-white" />
                       </div>
                     </div>
                   </div>
 
                   {/* Event Content */}
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-xl font-semibold group-hover:text-accent transition-colors">
+                  <div className="p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-base font-semibold group-hover:text-accent transition-colors">
                         {event.title}
                       </h3>
                       <Badge variant="outline" className="text-xs">
@@ -341,31 +336,19 @@ const Events = () => {
                       </Badge>
                     </div>
 
-                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-xs mb-3 leading-relaxed line-clamp-2">
                       {event.description}
                     </p>
 
-                    <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
-                        <span>{event.time}</span>
-                      </div>
+                    <div className="flex items-center justify-between text-xs text-muted-foreground">
                       <div className="flex items-center gap-1">
                         <MapPin className="h-3 w-3" />
-                        <span>{event.location}</span>
+                        <span className="truncate">{event.location}</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <Users className="h-3 w-3" />
                         <span>{event.attendees} attended</span>
                       </div>
-                    </div>
-
-                    <div className="flex flex-wrap gap-1">
-                      {event.tags.map((tag, index) => (
-                        <Badge key={index} variant="outline" className="text-xs opacity-80">
-                          {tag}
-                        </Badge>
-                      ))}
                     </div>
                   </div>
                 </div>
@@ -374,8 +357,8 @@ const Events = () => {
           </div>
 
           {/* View More Button */}
-          <div className="text-center mt-12">
-            <Button variant="leadership" size="lg" asChild>
+          <div className="text-center mt-8">
+            <Button variant="leadership" size="sm" asChild>
               <a href="https://www.instagram.com/neofolks/" target="_blank" rel="noopener noreferrer">
                 View All Past Events
               </a>
@@ -385,29 +368,22 @@ const Events = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="section-padding bg-card/20">
+      <section className="section-padding-sm bg-card/20">
         <div className="container mx-auto container-padding text-center">
-          <div className="glass-card rounded-2xl p-12 max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">
+          <div className="glass-card rounded-2xl p-8 max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold mb-4">
               Stay Updated with Our Events
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Don't miss out on exciting learning opportunities and networking events. 
-              Join our community to get notified about upcoming workshops and seminars.
+            <p className="text-sm text-muted-foreground mb-6">
+              Don't miss out on exciting learning opportunities and networking events.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg" asChild>
-                <a href="/join">
-                  Join Neofolks Community
-                </a>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button variant="hero" size="sm" asChild>
+                <a href="/join">Join Neofolks</a>
               </Button>
-              <Button variant="leadership" size="lg" asChild>
-                <a 
-                  href="https://www.instagram.com/neofolks/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  Follow Our Updates
+              <Button variant="leadership" size="sm" asChild>
+                <a href="https://www.instagram.com/neofolks/" target="_blank" rel="noopener noreferrer">
+                  Follow Updates
                 </a>
               </Button>
             </div>

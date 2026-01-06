@@ -129,10 +129,10 @@ const Team = () => {
   return (
     <div className="min-h-screen">
       {/* Page Header */}
-      <section className="section-padding bg-gradient-glow/10">
+      <section className="page-header-padding">
         <div className="container mx-auto container-padding text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-gradient-primary">Our Team</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-gradient-primary">Our Team</h1>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Meet the passionate leaders driving innovation and fostering community growth at Neofolks. Our team is
             committed to creating an inclusive environment where technology meets creativity.
           </p>
@@ -140,22 +140,22 @@ const Team = () => {
       </section>
 
       {/* Team Grid */}
-      <section className="section-padding">
+      <section className="section-padding-sm">
         <div className="container mx-auto container-padding">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {teamMembers.map((member) => (
               <div
                 key={member.id}
-                className="glass-card glass-card-hover rounded-xl p-8 text-center cursor-pointer group"
+                className="glass-card glass-card-hover rounded-xl p-6 text-center cursor-pointer group"
                 onClick={() => setSelectedMember(member)}
               >
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-primary mb-6 group-hover:scale-110 transition-all duration-300">
-                  <member.icon className="h-10 w-10 text-white" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-4 group-hover:scale-110 transition-all duration-300">
+                  <member.icon className="h-8 w-8 text-white" />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                <p className="text-accent mb-3 font-medium">{member.role}</p>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">{member.shortBio}</p>
+                <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
+                <p className="text-accent text-sm mb-3 font-medium">{member.role}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">{member.shortBio}</p>
 
                 <Button
                   variant="leadership"
@@ -177,54 +177,53 @@ const Team = () => {
             <>
               <DialogHeader>
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary">
-                    <selectedMember.icon className="h-8 w-8 text-white" />
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-primary">
+                    <selectedMember.icon className="h-7 w-7 text-white" />
                   </div>
                   <div>
-                    <DialogTitle className="text-2xl">{selectedMember.name}</DialogTitle>
-                    <p className="text-accent font-medium">{selectedMember.role}</p>
+                    <DialogTitle className="text-xl">{selectedMember.name}</DialogTitle>
+                    <p className="text-accent font-medium text-sm">{selectedMember.role}</p>
                   </div>
                 </div>
               </DialogHeader>
 
-              <div className="space-y-6">
+              <div className="space-y-5">
                 {/* Full Bio */}
                 <div>
-                  <h4 className="font-semibold mb-2">About</h4>
-                  <p className="text-muted-foreground leading-relaxed">{selectedMember.fullBio}</p>
+                  <h4 className="font-semibold mb-2 text-sm">About</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{selectedMember.fullBio}</p>
                 </div>
 
                 {/* Responsibilities */}
                 <div>
-                  <h4 className="font-semibold mb-3">Key Responsibilities</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <h4 className="font-semibold mb-2 text-sm">Key Responsibilities</h4>
+                  <div className="grid grid-cols-2 gap-2">
                     {selectedMember.responsibilities.map((responsibility, index) => (
-                      <div key={index} className="bg-muted/30 rounded-lg px-3 py-2 text-sm">
+                      <div key={index} className="bg-muted/30 rounded-lg px-3 py-2 text-xs">
                         {responsibility}
                       </div>
                     ))}
                   </div>
                 </div>
 
-
                 {/* Contact */}
                 {selectedMember.contact && (
                   <div>
-                    <h4 className="font-semibold mb-3">Connect</h4>
-                    <div className="flex gap-3">
+                    <h4 className="font-semibold mb-2 text-sm">Connect</h4>
+                    <div className="flex gap-2">
                       {selectedMember.contact.email && (
-                        <Button variant="ghost" size="icon">
-                          <Mail className="h-5 w-5" />
+                        <Button variant="ghost" size="icon" className="h-9 w-9">
+                          <Mail className="h-4 w-4" />
                         </Button>
                       )}
                       {selectedMember.contact.linkedin && (
-                        <Button variant="ghost" size="icon">
-                          <Linkedin className="h-5 w-5" />
+                        <Button variant="ghost" size="icon" className="h-9 w-9">
+                          <Linkedin className="h-4 w-4" />
                         </Button>
                       )}
                       {selectedMember.contact.github && (
-                        <Button variant="ghost" size="icon">
-                          <Github className="h-5 w-5" />
+                        <Button variant="ghost" size="icon" className="h-9 w-9">
+                          <Github className="h-4 w-4" />
                         </Button>
                       )}
                     </div>
